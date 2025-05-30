@@ -1,0 +1,27 @@
+.footer-container {
+  background-color: #424242;
+  display: flex;
+  height: 20vh;
+  justify-content: center;
+  align-items: center;
+  gap: 90vh;
+}
+
+.explanation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+
+  h1 {
+    color: $white;
+    font-family: "Gumi Romance";
+    font-size: 3vh;
+    letter-spacing: -0.96px;
+  }
+  h3 {
+    color: $white;
+    font-family: Pretendard;
+    font-size: 1.8vh;
+    font-weight: 300;
+  }
+}

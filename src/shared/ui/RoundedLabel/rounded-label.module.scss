@@ -1,11 +1,13 @@
 .text {
   display: flex;
-  padding: 1.4vh 5.3vh;
   justify-content: center;
   align-items: center;
 
+  width: 20vh;
+  height: 6.5vh;
+
   border-radius: 50px;
-  border: 1px solid gray;
+  border: 1px solid $gray;
   background: $ligtgray;
 
   color: $black;

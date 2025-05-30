@@ -1,0 +1,57 @@
+.curriculum-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+}
+
+.card {
+  width: 28vh;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.image-container {
+  background-color: #a8ddfd;
+  height: 27vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 20px 0px 0px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 90%;
+  }
+}
+
+.text-container {
+  font-family: "Jalnan";
+  color: $black;
+
+  padding: 1.5vh;
+  text-align: center;
+  border: 2px solid #a4d5ff;
+  border-radius: 0px 0px 20px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+    color: #333;
+  }
+}
+
+.subtitle {
+  color: $black;
+  width: 20vh;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 2vh;
+  font-weight: 300;
+}
