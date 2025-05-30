@@ -1,0 +1,47 @@
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2vh 20vh;
+  box-shadow: 0px 2px 12px 0px rgba(157, 157, 157, 0.25);
+
+  p {
+    display: inline-block;
+    color: var(--main-blue2, #0048ff);
+  }
+
+  .menu {
+    display: flex;
+    gap: 10vh;
+    margin-top: 0.2vh;
+    padding: 0;
+
+    font-family: "Jalnan";
+    font-size: 2vh;
+    color: $lightblack;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  .logo {
+    font-family: Gumi Romance;
+    letter-spacing: -1.32px;
+    font-size: 3.5vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button {
+    padding: 1vh;
+    background-color: #ffffff;
+    border-radius: 5vh;
+    padding: 0.9vh 3vh;
+    border: 1px solid var(--424242, #424242);
+
+    font-family: Pretendard;
+    font-size: 1.75vh;
+  }
+}

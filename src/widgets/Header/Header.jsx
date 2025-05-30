@@ -1,13 +1,17 @@
+import style from "./header.module.scss";
+
 const Header = () => {
   return (
-    <header className="">
-      <h1>
-        <a>S-KAI</a>
+    <header className={style["header-container"]}>
+      <h1 className={style["logo"]}>
+        <a>
+          <p>S</p>
+          -KAI
+        </a>
       </h1>
 
       <nav>
-        {/**/}
-        <ul className="">
+        <ul className={style["menu"]}>
           <li>1단계</li>
           <li>2단계</li>
           <li>3단계</li>
