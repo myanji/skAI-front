@@ -1,0 +1,120 @@
+.first-section {
+  display: flex;
+  background: linear-gradient(0deg, #96c3ff 0.01%, #3387f7 100%);
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  padding: 9vh 28vh 7vh 28vh;
+  gap: 8vh;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  p {
+    font-family: "Pretendard";
+    font-weight: 100;
+  }
+
+  strong {
+    font-family: "Pretendard";
+    font-weight: 800;
+  }
+
+  h1 {
+    font-family: "Gumi Romance";
+    font-size: 15vh;
+  }
+
+  img {
+    width: 60vh;
+  }
+}
+
+.subtitle-1 {
+  font-size: 5vh;
+  letter-spacing: -1.2px;
+}
+
+.subtitle-2 {
+  font-size: 2.5vh;
+}
+
+.second-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  gap: 5vh;
+
+  div {
+    display: flex;
+    justify-content: center;
+    gap: 5vh;
+  }
+
+  .second-content {
+    font-family: "Pretendard";
+    font-weight: 300;
+    font-size: 2.3vh;
+    text-align: center;
+  }
+}
+
+.third-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .third-content {
+    font-family: "Pretendard";
+    font-weight: 300;
+    font-size: 2.3vh;
+    text-align: center;
+  }
+}
+
+.diary-stack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > * {
+    margin-left: -15vh;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    transform: scale(0.75);
+    z-index: 1;
+  }
+
+  > *:first-child {
+    margin-left: 0;
+  }
+
+  > *:hover {
+    transform: scale(0.85);
+    z-index: 2;
+  }
+}
+
+.final-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 16vh;
+}
+
+.card-stack {
+  margin-top: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5vh;
+
+  margin-bottom: 18vh;
+}
