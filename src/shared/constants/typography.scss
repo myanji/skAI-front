@@ -1,0 +1,104 @@
+/* 
+   Font Weight 기준표 (CSS 표준)
+
+   100 - Thin (가장 얇음)
+   200 - Extra Light (Ultra Light)
+   300 - Light (얇음)
+   400 - Normal (Regular)
+   500 - Medium
+   600 - Semi Bold
+   700 - Bold (굵음)
+   800 - Extra Bold (두껍게)
+   900 - Black (가장 두꺼움)
+*/
+@font-face {
+  font-family: "Pretendard";
+  src: url("@/shared/assets/fonts/Pretendard-Thin.otf") format("opentype");
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("@/shared/assets/fonts/Pretendard-light.otf") format("opentype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("@/shared/assets/fonts/Pretendard-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("@/shared/assets/fonts/Pretendard-Bold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("@/shared/assets/fonts/Pretendard-ExtraBold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("@/shared/assets/fonts/Pretendard-Blck.otf") format("opentype");
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Jalnan";
+  src: url("@/shared/assets/fonts/Jalnan2.otf") format("opentype"),
+    url("@/shared/assets/fonts/Jalnan2TTF.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Paperlogy";
+  src: url("@/shared/assets/fonts/Paperlogy-3Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Gumi Romance";
+  src: url("@/shared/assets/fonts/GumiRomance.otf") format("opentype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Freesentation";
+  src: url("@/shared/assets/fonts/Freesentation-7Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Freesentation";
+  src: url("@/shared/assets/fonts/Freesentation-4Regular.ttf")
+    format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Freesentation";
+  src: url("@/shared/assets/fonts/Freesentation-3Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Freesentation";
+  src: url("@/shared/assets/fonts/Freesentation-1Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100;
+}

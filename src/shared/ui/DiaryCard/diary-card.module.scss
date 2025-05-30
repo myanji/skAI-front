@@ -1,0 +1,39 @@
+.diary-card {
+  display: flex;
+  flex-direction: column;
+
+  width: 35vh;
+  height: 65vh;
+  border-radius: 16px;
+  gap: 2.5vh;
+
+  h3 {
+    font-size: 2.2vh;
+    font-weight: 700;
+    text-align: center;
+
+    color: $black;
+    font-family: "Jalnan";
+
+    margin-top: 6vh;
+  }
+
+  img {
+    width: 80%;
+    border-radius: 16px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  p {
+    margin: 0 auto;
+
+    width: 27vh;
+    font-size: 2vh;
+    color: $black;
+    text-align: left;
+    font-family: "Freesentation";
+    font-size: 100;
+    font-weight: 300;
+  }
+}

@@ -1,0 +1,26 @@
+.container {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8vh;
+}
+
+.progress-bar {
+  display: flex;
+  width: 80vh;
+  height: 2.5vh;
+  border-radius: 30px;
+  background: #eceef1;
+}
+
+.count {
+  color: $black;
+  font-family: "Jalnan";
+  font-size: 1.8vh;
+
+  p {
+    display: inline;
+    color: $blue-100;
+  }
+}

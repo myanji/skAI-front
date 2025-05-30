@@ -1,0 +1,21 @@
+.canvas_wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  overflow: hidden;
+
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  touch-action: none; /* 스크롤/줌 방지 */
+}
+
+.canvas_wrap canvas {
+  border: 2px solid #333;
+  border-radius: 8px;
+  background-color: white;
+  cursor: crosshair;
+  touch-action: none; /* 🖐️ 터치 방해 방지 */
+}

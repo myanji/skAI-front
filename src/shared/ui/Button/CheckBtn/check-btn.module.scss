@@ -1,0 +1,20 @@
+.button {
+  display: flex;
+  padding: 1.7vh 6vh;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: $gray2;
+  border: none;
+
+  font-family: "jalnan";
+  color: $white;
+  font-size: 2vh;
+  cursor: pointer;
+}
+
+.access {
+  background: $blue-500;
+}

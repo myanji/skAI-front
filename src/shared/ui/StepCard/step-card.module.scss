@@ -1,0 +1,35 @@
+.card {
+  width: 25vh;
+  height: 34.8vh;
+  background-color: #e9ceb7;
+  border-radius: 16px;
+  border: 1px solid #aa7b51;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.imageBox {
+  background-color: $white;
+  border-radius: 16px;
+  width: 100%;
+  height: 24vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageBox img {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  font-family: "Jalnan", sans-serif;
+  font-size: 2.7vh;
+  color: $white;
+  text-align: center;
+}
