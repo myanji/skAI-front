@@ -1,0 +1,26 @@
+.btnContainer {
+  margin-top: 3vh;
+  display: flex;
+  gap: 1.5vh;
+}
+
+.btnHint {
+  width: 14vh;
+  height: 5.5vh;
+  border-radius: 50px;
+  border: 1px solid $lightblack;
+  font-family: "Jalnan";
+  font-size: 2vh;
+  background-color: $white;
+}
+
+.btnSend {
+  width: 14vh;
+  height: 5.5vh;
+  border-radius: 50px;
+  background: $gray2;
+  border: none;
+  font-family: "Jalnan";
+  color: $white;
+  font-size: 2vh;
+}

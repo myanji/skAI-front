@@ -1,0 +1,41 @@
+.question-container {
+  display: flex;
+  align-items: center;
+  margin-top: 3vh;
+
+  img {
+    width: 24vh;
+  }
+}
+
+.question {
+  width: 45vh;
+  margin-left: 3vh;
+  color: $black;
+  font-family: Paperlogy;
+  font-size: 2vh;
+  font-weight: 300;
+
+  display: flex;
+  align-items: center;
+}
+
+.btn_div {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  margin-top: 3vh;
+}
+
+.btn_answer {
+  width: 72vh;
+  height: 6vh;
+  gap: 8px;
+  background-color: $white;
+  border-radius: 10px;
+  border: 1px solid $gray;
+  color: $black;
+  font-family: Pretendard;
+  font-size: 2vh;
+  font-weight: 400;
+}
