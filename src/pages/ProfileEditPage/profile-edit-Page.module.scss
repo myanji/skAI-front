@@ -1,0 +1,119 @@
+.profile-edit-container {
+  font-family: "Pretendard", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.title {
+  font-size: 3.3vh;
+  font-family: "Jalnan";
+  color: $black;
+  margin-right: 75vh;
+  margin-bottom: 2vh;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4vw;
+  margin-top: 4vh;
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-img {
+  display: flex;
+  gap: 1vw;
+  margin-bottom: 4vh;
+}
+
+.profile {
+  width: 8vh;
+  border-radius: 50%;
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.profile:hover,
+.profile.selected {
+  opacity: 100%;
+}
+
+.input-div {
+  display: flex;
+  align-items: center;
+  gap: 2vh;
+  margin-bottom: 2vh;
+  width: 100%;
+}
+
+.input-div:last-child {
+  margin: 0;
+}
+
+.label {
+  font-size: 2vh;
+  font-family: "Pretendard";
+  font-weight: 300;
+  color: $black;
+  width: 6vh;
+}
+
+.input {
+  padding: 1.8vh;
+  border-radius: 12px;
+  border: 1px solid $gray2;
+
+  font-size: 2vh;
+  font-family: "Pretendard";
+  font-weight: 300;
+  flex: 1;
+}
+
+input:focus {
+  outline: none;
+}
+
+.gender-btn-div {
+  display: flex;
+  justify-content: space-between;
+  width: 13.5vh;
+}
+
+.gender-btn {
+  width: 6vh;
+  height: 6vh;
+  border: 1px solid $gray2;
+  border-radius: 50%;
+  background-color: #fff;
+  font-size: 3vh;
+  font-family: "jalnan";
+  color: #ff7aa7;
+
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+  opacity: 50%;
+}
+
+.gender-btn:first-child {
+  color: #3791ff;
+}
+
+.gender-btn:hover,
+.gender-btn.active {
+  opacity: 100%;
+}
+
+.saveBtn {
+  text-align: center;
+  margin-top: 8vh;
+  display: flex;
+  justify-content: center;
+}
