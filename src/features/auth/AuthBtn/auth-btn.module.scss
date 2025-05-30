@@ -1,0 +1,23 @@
+.btn-container {
+  display: flex;
+  width: 45vh;
+  height: 6.4vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: $gray2;
+  border: none;
+
+  font-family: "jalnan";
+  color: $white;
+  font-size: 2vh;
+
+  cursor: pointer;
+}
+
+.select {
+  background: $blue-100;
+  color: $black;
+}

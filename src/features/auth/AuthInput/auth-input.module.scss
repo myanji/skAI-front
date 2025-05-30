@@ -1,0 +1,22 @@
+.auth-input {
+  display: flex;
+  width: 45vh;
+  height: 6.2vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: #f5f5f5;
+  border: none;
+
+  font-family: "jalnan";
+  color: $black;
+  font-size: 1.9vh;
+}
+
+input::placeholder {
+  color: #b1b1b1;
+  font-size: 1.9vh;
+  text-align: center;
+}

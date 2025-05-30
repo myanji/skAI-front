@@ -1,0 +1,60 @@
+.sign-up-finish-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 9vh;
+
+  h1 {
+    color: $black;
+    font-family: "Jalnan 2";
+    font-size: 4vh;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+  }
+
+  p {
+    font-family: "Paperlogy";
+    font-size: 2vh;
+    font-weight: 100;
+    margin-bottom: 1vh;
+  }
+}
+
+.check-img {
+  width: 30vh;
+}
+
+.bar {
+  width: 30vh;
+  height: 0.1vh;
+  background-color: $gray2;
+
+  margin-top: 4vh;
+  margin-bottom: 3vh;
+}
+
+.btn-container {
+  display: flex;
+  gap: 2vh;
+
+  button {
+    display: flex;
+    width: 18vh;
+    height: 7vh;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50px;
+    border: 1px solid $gray;
+    background-color: $white;
+
+    font-family: "Jalnan";
+    font-size: 2vh;
+    color: #424242;
+  }
+}
+
+button.login-btn {
+  background-color: $blue-500;
+  color: $white;
+}
