@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 9vh;
+}
+
+.option-container {
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    font-family: "Freesentation";
+    font-weight: 700;
+    font-size: 2.5vh;
+    margin-bottom: 0.5vh;
+  }
+
+  p {
+    font-family: "Freesentation";
+    font-weight: 300;
+    font-size: 2vh;
+    margin-bottom: 3vh;
+  }
+}
+
+.drawing-container {
+  display: flex;
+  gap: 1.5vh;
+
+  margin-bottom: 7vh;
+}
+
+.color-container {
+  display: flex;
+  gap: 1.5vh;
+
+  margin-bottom: 7vh;
+}
+
+.character-container {
+  display: flex;
+  gap: 1.5vh;
+}
+
+.custom-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4vh;
+
+  .line {
+    height: 0.1vh;
+    background-color: $gray;
+    margin-bottom: 5vh;
+  }
+
+  .hair-container {
+    display: flex;
+    gap: 2vh;
+    margin-bottom: 3vh;
+  }
+
+  .clothes-container {
+    display: flex;
+    gap: 2vh;
+  }
+}
+
+.select-btn {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 8vh;
+  margin-bottom: 12vh;
+}
+
+.enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.enterActive {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.exitActive {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}

@@ -1,0 +1,34 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  width: 30vh;
+  padding: 4.5vh 0 1.5vh 0;
+  border-radius: 20px;
+  border: 1px solid #484848;
+  background: #fff;
+
+  transition: all 0.2s ease;
+}
+
+.card-img {
+  width: 92%;
+  margin-left: 2.4vh;
+}
+
+.card-text {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.8vh;
+
+  font-family: "Jalnan";
+  font-size: 2.6vh;
+  color: $black;
+}
+
+.selected {
+  border: 3px solid $blue-500;
+}
+
+.dimmed {
+  opacity: 0.5;
+}

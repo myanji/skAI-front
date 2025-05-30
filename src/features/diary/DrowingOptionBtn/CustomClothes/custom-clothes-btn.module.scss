@@ -1,0 +1,26 @@
+.clothes-btn {
+  display: flex;
+  width: 17vh;
+  height: 18vh;
+  padding: 1vh 1.5vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+  border: 1px solid #777777;
+  background: var(--white, #fff);
+  transition: all 0.1s ease;
+
+  img {
+    width: 100%;
+  }
+}
+
+.selected {
+  border: 2px solid $blue-500;
+}
+
+.dimmed {
+  opacity: 0.5;
+}
