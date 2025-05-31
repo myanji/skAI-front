@@ -17,7 +17,11 @@ import step3 from "./assets/step3.png";
 import RoundedLabel from "../../shared/ui/RoundedLabel/RoundedLabel";
 import CurriculumCard from "../../features/Main/CurriculumCard/CurriculumCard";
 
+import { useNavigate } from "react-router-dom";
+
 const MainPage = () => {
+  const navigate = useNavigate();
+
   return (
     <main>
       <Header />
@@ -103,14 +107,17 @@ const MainPage = () => {
             {
               image: step1,
               title: "1단계 가기",
+              path: "/step1",
             },
             {
               image: step2,
               title: "2단계 가기",
+              path: "/step2",
             },
             {
               image: step3,
               title: "3단계 가기",
+              path: "/step3",
             },
           ].map((item, index) => (
             <CurriculumCard
@@ -118,6 +125,7 @@ const MainPage = () => {
               image={item.image}
               title={item.title}
               subtitle={item.subtitle}
+              onClick={() => navigate(item.path)}
             />
           ))}
         </div>

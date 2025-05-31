@@ -1,8 +1,11 @@
 import style from "./sign-up-finish-page.module.scss";
 import check from "./Check.png";
 import Header from "../../../widgets/Header/Header";
+import { useNavigate } from "react-router-dom";
 
 const SignUpFinishPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Header />
@@ -13,8 +16,13 @@ const SignUpFinishPage = () => {
         <p>로그인 후 이용해주세요</p>
         <div className={style["bar"]}></div>
         <div className={style["btn-container"]}>
-          <button>메인으로</button>
-          <button className={style["login-btn"]}>로그인</button>
+          <button onClick={() => navigate("/")}>메인으로</button>
+          <button
+            onClick={() => navigate("/SignInPage")}
+            className={style["login-btn"]}
+          >
+            로그인
+          </button>
         </div>
       </div>
     </div>

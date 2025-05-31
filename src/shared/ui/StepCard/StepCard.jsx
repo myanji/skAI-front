@@ -1,8 +1,8 @@
 import styles from "./step-card.module.scss";
 
-const StepCard = ({ imageSrc, title }) => {
+const StepCard = ({ imageSrc, title, onClick }) => {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={onClick}>
       <div className={styles.imageBox}>
         <img src={imageSrc} alt={title} />
       </div>

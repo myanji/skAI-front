@@ -65,9 +65,9 @@ const SignInPage = () => {
         </form>
 
         <div className={style["auth-nav"]}>
-          <a href="/signup">회원가입</a>
+          <a href="/SignUpPage">회원가입</a>
           <span>|</span>
-          <a href="/find-password">비밀번호 찾기</a>
+          <a href="/FindPassword">비밀번호 찾기</a>
         </div>
       </div>
     </div>

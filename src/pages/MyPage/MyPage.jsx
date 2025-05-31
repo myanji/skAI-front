@@ -3,8 +3,11 @@ import Header from "../../widgets/Header/Header";
 import profileImg from "../ProfileEditPage/assets/bear.png";
 import style from "./mypage.module.scss";
 import ProfileBtn from "../../shared/ui/Button/ProfileBtn/ProfileBtn";
+import { useNavigate } from "react-router-dom";
 
 const MyPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Header />
@@ -21,7 +24,12 @@ const MyPage = () => {
             joinDate: "2025.03.15",
           }}
         />
-        <div className={style["mypage-btn"]}>
+        <div
+          className={style["mypage-btn"]}
+          onClick={() => {
+            navigate("/profileeditpage");
+          }}
+        >
           <ProfileBtn text="프로필 수정" />
         </div>
       </section>
