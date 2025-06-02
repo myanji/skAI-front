@@ -1,0 +1,13 @@
+.diary-page {
+  display: flex;
+  flex-direction: column;
+
+  height: 92vh;
+  justify-content: center;
+}
+
+.diary-container {
+  display: flex;
+  justify-content: center;
+  gap: 5vh;
+}
