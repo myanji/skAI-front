@@ -1,0 +1,79 @@
+/* calendar-page.module.scss */
+
+.calendar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.month-title {
+  font-family: "jalnan";
+  color: $black;
+  font-size: 3.5vh;
+}
+
+.main-container {
+  margin-top: 4vh;
+  display: flex;
+}
+
+.calendar-container {
+  margin-left: 10vh;
+  margin-right: 10vh;
+}
+
+.weekday-row {
+  width: 65vh;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 2vh;
+
+  .weekday-cell {
+    color: #000;
+    font-family: "Freesentation";
+    font-size: 2.5vh;
+    font-weight: 300;
+  }
+}
+
+.dates-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1.5vh;
+}
+
+.date-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 2vh;
+  font-family: "Gumi Romance";
+}
+
+.current-day {
+  background-color: #efefef;
+  color: #111;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #ddd;
+  }
+}
+
+.other-month-day {
+  color: $gray;
+}
+
+.nav-button {
+  all: unset;
+  width: 8vh;
+
+  img {
+    width: 100%;
+  }
+}
