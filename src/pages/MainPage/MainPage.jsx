@@ -23,7 +23,7 @@ const MainPage = () => {
   const navigate = useNavigate();
 
   return (
-    <main>
+    <main className={style["layout"]}>
       <Header />
       <section className={style["first-section"]}>
         <div>

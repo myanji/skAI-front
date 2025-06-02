@@ -21,7 +21,7 @@ const TypingPage = () => {
   }
 
   return (
-    <div>
+    <div className={style["layout"]}>
       <Header />
       <div className={style["typing-container"]}>
         <h3>일기를 작성해주세요!</h3>

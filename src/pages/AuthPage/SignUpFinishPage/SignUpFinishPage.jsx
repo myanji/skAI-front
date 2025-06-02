@@ -7,7 +7,7 @@ const SignUpFinishPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className={style["layout"]}>
       <Header />
       <div className={style["sign-up-finish-container"]}>
         <img className={style["check-img"]} src={check} alt="Check 이미지" />

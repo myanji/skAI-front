@@ -5,7 +5,7 @@ import style from "./canvas-page.module.scss";
 
 const CanvasPage = () => {
   return (
-    <div>
+    <div className={style["layout"]}>
       <Header />
       <div className={style["canvas-container"]}>
         <h3>일기를 작성해주세요!</h3>

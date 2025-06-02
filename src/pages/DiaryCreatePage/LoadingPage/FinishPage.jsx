@@ -5,7 +5,7 @@ import style from "./finish-page.module.scss";
 
 const FinishPage = () => {
   return (
-    <div>
+    <div className={style["layout"]}>
       <Header />
       <div className={style["finish-container"]}>
         <h3>일기가 완성되었어요!</h3>

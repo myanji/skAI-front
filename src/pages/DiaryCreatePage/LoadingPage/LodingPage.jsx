@@ -4,7 +4,7 @@ import style from "./loading-page.module.scss";
 
 const LoadingPage = () => {
   return (
-    <div>
+    <div className={style["layout"]}>
       <Header />
       <div className={style["loading-container"]}>
         <h3>일기를 만들고 있어요...</h3>

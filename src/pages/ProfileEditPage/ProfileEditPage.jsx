@@ -10,7 +10,7 @@ import robot from "./assets/robot.png";
 
 const ProfileEditPage = () => {
   return (
-    <div>
+    <div className={style["layout"]}>
       <Header />
 
       <div className={style["profile-edit-container"]}>

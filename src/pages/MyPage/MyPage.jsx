@@ -9,7 +9,7 @@ const MyPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className={style["layout"]}>
       <Header />
       <section className={style["mypage-container"]}>
         <ProfileCard

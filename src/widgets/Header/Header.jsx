@@ -25,7 +25,7 @@ const Header = () => {
           <li onClick={() => navigate("/step1")}>1단계</li>
           <li onClick={() => navigate("/step2")}>2단계</li>
           <li onClick={() => navigate("/step3")}>3단계</li>
-          <li onClick={() => navigate("/Diary")}>일기</li>
+          <li onClick={() => navigate("/Calendar")}>일기</li>
         </ul>
       </nav>
 

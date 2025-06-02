@@ -14,6 +14,8 @@ import SignInPage from "../pages/AuthPage/SignInPage/SignInPage";
 import SignUpFinishPage from "../pages/AuthPage/SignUpFinishPage/SignUpFinishPage";
 import Step2 from "../pages/StepPage/Step2";
 import Step3 from "../pages/StepPage/Step3";
+import CalendarPage from "../pages/DiaryPage/CalendarPage/CalendarPage";
+import DiaryCreatePage from "../pages/DiaryCreatePage/DiaryCreatePage/DiaryCreatePage";
 
 function App() {
   return (
@@ -32,7 +34,8 @@ function App() {
         <Route path="/DiaryCreate" element={<DiaryModeSelect />} />
         <Route path="/SignUpPage" element={<SignUpPage />} />
         <Route path="/SignInPage" element={<SignInPage />} />
-        <Route path="/SignUpFinishPage" element={<SignUpFinishPage />} />
+        <Route path="/Calendar" element={<CalendarPage />} />
+        <Route path="/DiaryCreatePage" element={<DiaryCreatePage />} />
       </Routes>
     </BrowserRouter>
   );

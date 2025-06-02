@@ -1,9 +1,15 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+
+  height: 92vh;
+  justify-content: center;
+}
+
 .mypage-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  margin-top: 15vh;
 }
 
 .mypage-btn {

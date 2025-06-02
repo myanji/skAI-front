@@ -86,7 +86,7 @@ const CalendarPage = () => {
   ];
 
   return (
-    <section>
+    <section className={style["layout"]}>
       <Header />
       <div className={style["calendar-section"]}>
         <h2 className={style["month-title"]}>
@@ -114,7 +114,7 @@ const CalendarPage = () => {
                     dayObj.current
                       ? style["current-day"]
                       : style["other-month-day"]
-                  }`}
+                  } ${style["select"]}`}
                 >
                   {dayObj.date}
                 </div>

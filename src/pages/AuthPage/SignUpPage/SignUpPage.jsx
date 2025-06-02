@@ -90,7 +90,7 @@ const SignUpPage = () => {
     return <SignUpFinishPage />;
   }
   return (
-    <div>
+    <div className={style["layout"]}>
       <Header />
       <div className={style["sign-up-container"]}>
         <h1>회원가입</h1>

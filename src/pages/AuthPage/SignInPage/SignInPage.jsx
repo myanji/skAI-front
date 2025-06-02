@@ -32,7 +32,7 @@ const SignInPage = () => {
   };
 
   return (
-    <div>
+    <div className={style["layout"]}>
       <Header />
       <div className={style["sign-in-container"]}>
         <h1>로그인</h1>
