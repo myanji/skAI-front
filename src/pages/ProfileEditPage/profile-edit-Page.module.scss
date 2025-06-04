@@ -45,11 +45,11 @@
   border-radius: 50%;
   opacity: 50%;
   cursor: pointer;
-}
+  transition: opacity 0.2s;
 
-.profile:hover,
-.profile.selected {
-  opacity: 100%;
+  &.selected {
+    opacity: 100%;
+  }
 }
 
 .input-div {
@@ -102,20 +102,24 @@ input:focus {
   font-size: 3vh;
   font-family: "jalnan";
   color: #ff7aa7;
-
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-
   opacity: 50%;
+
+  &.selected {
+    opacity: 100%;
+    border-color: #ff7aa7;
+    background-color: #fff5f9;
+  }
 }
 
 .gender-btn:first-child {
   color: #3791ff;
-}
 
-.gender-btn:hover,
-.gender-btn.active {
-  opacity: 100%;
+  &.selected {
+    border-color: #3791ff;
+    background-color: #f0f7ff;
+  }
 }
 
 .saveBtn {
