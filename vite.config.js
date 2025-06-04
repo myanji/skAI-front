@@ -20,5 +20,19 @@ export default defineConfig({
   },
   server: {
     host: true,
+    proxy: {
+      "/api": {
+        target:
+          "http://ec2-3-37-53-105.ap-northeast-2.compute.amazonaws.com:8080",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/members": {
+        target:
+          "http://ec2-3-37-53-105.ap-northeast-2.compute.amazonaws.com:8080",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
 });
