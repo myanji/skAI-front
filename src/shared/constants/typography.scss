@@ -68,6 +68,20 @@
 }
 
 @font-face {
+  font-family: "Paperlogy";
+  src: url("@/shared/assets/fonts/Paperlogy-6SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Paperlogy";
+  src: url("@/shared/assets/fonts/Paperlogy-7Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
   font-family: "Gumi Romance";
   src: url("@/shared/assets/fonts/GumiRomance.otf") format("opentype");
   font-style: normal;

@@ -20,17 +20,17 @@ const Step1 = () => {
           <StepCard
             imageSrc={word}
             title={"단어 맞추기"}
-            onClick={() => navigate("/word")}
+            onClick={() => navigate("/word", { state: { level: 1 } })}
           />
           <StepCard
             imageSrc={sentence}
             title={"문장 순서 맞추기"}
-            onClick={() => navigate("/sentence")}
+            onClick={() => navigate("/sentence", { state: { level: 1 } })}
           />
           <StepCard
             imageSrc={dictation}
             title={"받아쓰기"}
-            onClick={() => navigate("/dictation")}
+            onClick={() => navigate("/dictation", { state: { level: 1 } })}
           />
 
           <StepCard imageSrc={antonym} title={"반의어 찾기"} />

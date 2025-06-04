@@ -33,3 +33,12 @@
   font-weight: 400;
   text-align: center;
 }
+
+.error-text {
+  color: $error;
+  text-align: center;
+  font-family: "Jalnan";
+  font-size: 2vh;
+
+  margin-top: 3vh;
+}

@@ -1,14 +1,19 @@
 import style from "./progress-bar.module.scss";
 
 const ProgressBar = ({ solvedCount, totalCount }) => {
+  const percentage = Math.min(
+    100,
+    Math.max(0, Math.round((solvedCount / totalCount) * 100))
+  );
+
   return (
     <section className={style["container"]}>
       <div className={style["progress-bar"]}>
-        <div></div>
+        <div className={style.fill} style={{ width: `${percentage}%` }}></div>
       </div>
-      <p className={style["count"]}>
+      <div className={style["count"]}>
         <p>{solvedCount}</p>/{totalCount}
-      </p>
+      </div>
     </section>
   );
 };
