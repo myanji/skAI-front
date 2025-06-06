@@ -11,11 +11,12 @@ import ProfileEditPage from "../pages/ProfileEditPage/ProfileEditPage";
 import DiaryModeSelect from "../pages/DiaryCreatePage/DiaryModeSelect/DiaryModeSelect";
 import SignUpPage from "../pages/AuthPage/SignUpPage/SignUpPage";
 import SignInPage from "../pages/AuthPage/SignInPage/SignInPage";
-import SignUpFinishPage from "../pages/AuthPage/SignUpFinishPage/SignUpFinishPage";
 import Step2 from "../pages/StepPage/Step2";
 import Step3 from "../pages/StepPage/Step3";
 import CalendarPage from "../pages/DiaryPage/CalendarPage/CalendarPage";
 import DiaryCreatePage from "../pages/DiaryCreatePage/DiaryCreatePage/DiaryCreatePage";
+import DiaryPage from "../pages/DiaryPage/DiaryPage/DiaryPage";
+import AntonymPage from "../pages/QuestionPage/AntonymPage/AntonymPage";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/Sentence" element={<SentencePage />} />
         <Route path="/Idioms" element={<IdiomsPage />} />
         <Route path="/Dictation" element={<DictationPage />} />
+        <Route path="/Antonym" element={<AntonymPage />} />
         <Route path="/MyPage" element={<MyPage />} />
         <Route path="/ProfileEditPage" element={<ProfileEditPage />} />
         <Route path="/DiaryCreate" element={<DiaryModeSelect />} />
@@ -36,6 +38,7 @@ function App() {
         <Route path="/SignInPage" element={<SignInPage />} />
         <Route path="/Calendar" element={<CalendarPage />} />
         <Route path="/DiaryCreatePage" element={<DiaryCreatePage />} />
+        <Route path="/Diary" element={<DiaryPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,34 +1,123 @@
-import { useState } from "react";
-import ColorBtn from "../../../features/diary/DrowingOptionBtn/ColorBtn/ColorBtn";
-import CustomHairBtn from "../../../features/diary/DrowingOptionBtn/CustomHair/CustomHairBtn";
-import OptionBtn from "../../../features/diary/DrowingOptionBtn/OptionBtn/OptionBtn";
+// src/pages/Diary/DrawingOption/DrawingOption.jsx
+import { useState, useEffect } from "react";
+import ColorBtn from "../../../features/diary/DrawingOptionBtn/ColorBtn/ColorBtn";
+import CustomHairBtn from "../../../features/diary/DrawingOptionBtn/CustomHair/CustomHairBtn";
+import OptionBtn from "../../../features/diary/DrawingOptionBtn/OptionBtn/OptionBtn";
 import Header from "../../../widgets/Header/Header";
 import style from "./drawing-option.module.scss";
 import shorthair from "../assets/shorthair.png";
 import middlehair from "../assets/middlehair.png";
 import longhair from "../assets/longhair.png";
-import Glook1 from "../assets/Glook1.png";
-import Glook2 from "../assets/Glook2.png";
-import Glook3 from "../assets/Glook3.png";
-import CustomClothesBtn from "../../../features/diary/DrowingOptionBtn/CustomClothes/CustomClothesBtn";
+import look1 from "../assets/look1.png";
+import look2 from "../assets/look2.png";
+import look3 from "../assets/look3.png";
+import look4 from "../assets/look4.png";
+import look5 from "../assets/look5.png";
+import CustomClothesBtn from "../../../features/diary/DrawingOptionBtn/CustomClothes/CustomClothesBtn";
 import useSelectIndex from "../../../shared/hooks/useSelectIndex";
 import CheckBtn from "../../../shared/ui/Button/CheckBtn/CheckBtn";
 import LoadingPage from "../LoadingPage/LodingPage";
+import FinishPage from "../LoadingPage/FinishPage";
+import api from "../../../shared/lib/api";
 
-const DrawingOption = () => {
-  const drawing = useSelectIndex(); // 그림체
-  const color = useSelectIndex(); // 색
-  const character = useSelectIndex(); // 캐릭터 커스텀 여부
-  const hair = useSelectIndex(); // 머리
-  const clothes = useSelectIndex(); // 옷
+const DrawingOption = ({ diaryImage }) => {
+  const drawing = useSelectIndex(); // 그림체 선택
+  const color = useSelectIndex(); // 색상 선택
+  const character = useSelectIndex(); // 캐릭터 꾸미기 여부
+  const hair = useSelectIndex(); // 헤어스타일 (여자만)
+  const clothes = useSelectIndex(); // 옷 선택
 
-  // 확인 버튼 누를 시 Loading 컴포넌트로 넘어가게
-  const [confirmed, setConfirmed] = useState(false);
-  const handleCheck = () => {
-    setConfirmed(true);
+  const [gender, setGender] = useState(null); // 서버에서 받아올 성별 ("girl" / "boy")
+  const [isLoading, setIsLoading] = useState(false);
+  const [resultData, setResultData] = useState(null);
+  const [showFinish, setShowFinish] = useState(false);
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const res = await api.get("/api/profile/profile");
+        setGender(res.data.gender);
+      } catch (err) {
+        console.error("프로필 정보 불러오기 실패:", err);
+      }
+    };
+    fetchProfile();
+  }, []);
+
+  const handleCheck = async () => {
+    try {
+      const styleMapping = [
+        "만화같이",
+        "수채화",
+        "유화",
+        "몽환적인",
+        "배경중심",
+      ];
+      const colorMapping = [
+        "빨간색",
+        "주황색",
+        "노랑색",
+        "연두색",
+        "하늘색",
+        "보라색",
+        "베이지색",
+      ];
+      const selectedStyle = styleMapping[drawing.selectIndex];
+      const selectedColor = colorMapping[color.selectIndex];
+      const useCustom = character.selectIndex === 1;
+
+      let hairstyleParam = "";
+      let outfitParam = "";
+      if (useCustom) {
+        if (gender === "girl") {
+          const girlHairMapping = ["short", "med", "long"];
+          hairstyleParam = girlHairMapping[hair.selectIndex];
+          const girlOutfitMapping = ["one", "two", "three"];
+          outfitParam = girlOutfitMapping[clothes.selectIndex];
+        } else if (gender === "boy") {
+          hairstyleParam = "short";
+          const boyOutfitMapping = ["four", "five"];
+          outfitParam = boyOutfitMapping[clothes.selectIndex];
+        }
+      }
+
+      const queryParams = new URLSearchParams({
+        style: selectedStyle,
+        color: selectedColor,
+        useCustom: useCustom.toString(),
+        hairstyle: hairstyleParam,
+        outfit: outfitParam,
+      }).toString();
+
+      const formData = new FormData();
+      formData.append("diaryImage", diaryImage);
+
+      setIsLoading(true);
+      const response = await api.post(
+        `/api/diary/generate?${queryParams}`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      setResultData(response.data);
+      setIsLoading(false);
+      setShowFinish(true);
+    } catch (err) {
+      console.error("그림일기 생성 요청 실패:", err);
+      setIsLoading(false);
+    }
   };
-  if (confirmed) {
+
+  if (isLoading) {
     return <LoadingPage />;
+  }
+
+  if (showFinish && resultData) {
+    return <FinishPage resultData={resultData} />;
   }
 
   return (
@@ -40,34 +129,35 @@ const DrawingOption = () => {
           <p>선택한 그림체를 반영한 그림이 만들어져요!</p>
           <div className={style["drawing-container"]}>
             {["만화같이", "수채화", "유화", "몽환적인", "배경중심"].map(
-              (item, index) => (
+              (item, idx) => (
                 <OptionBtn
-                  key={index}
+                  key={idx}
                   text={item}
-                  isSelected={drawing.selectIndex === index}
-                  onClick={() => drawing.onClickBtn(index)}
+                  isSelected={drawing.selectIndex === idx}
+                  onClick={() => drawing.onClickBtn(idx)}
                 />
               )
             )}
           </div>
+
           <h3>원하는 색상을 선택해보세요</h3>
           <p>선택한 색상 대로 그림이 만들어져요!</p>
           <div className={style["color-container"]}>
             {[
               { text: "빨간색", color: "#FF5D5D" },
               { text: "주황색", color: "#FFA24C" },
-              { text: "노랑색", color: "#FFED4E" },
+              { text: "노란색", color: "#FFED4E" },
               { text: "연두색", color: "#B4FF53" },
               { text: "하늘색", color: "#5DDCFF" },
               { text: "보라색", color: "#A05DFF" },
               { text: "베이지색", color: "#F5E7CB" },
-            ].map((item, index) => (
+            ].map((item, idx) => (
               <ColorBtn
-                key={index}
+                key={idx}
                 text={item.text}
                 color={item.color}
-                isSelected={color.selectIndex === index}
-                onClick={() => color.onClickBtn(index)}
+                isSelected={color.selectIndex === idx}
+                onClick={() => color.onClickBtn(idx)}
               />
             ))}
           </div>
@@ -75,16 +165,17 @@ const DrawingOption = () => {
           <h3>그림일기 주인공을 꾸며보세요</h3>
           <p>선택하지 않으면 지정된 캐릭터가 자동으로 그림일기에 등장합니다!</p>
           <div className={style["character-container"]}>
-            {["꾸미지 않는다", "꾸민다"].map((item, index) => (
+            {["꾸미지 않는다", "꾸민다"].map((item, idx) => (
               <OptionBtn
-                key={index}
+                key={idx}
                 text={item}
-                isSelected={character.selectIndex === index}
-                onClick={() => character.onClickBtn(index)}
+                isSelected={character.selectIndex === idx}
+                onClick={() => character.onClickBtn(idx)}
               />
             ))}
           </div>
-          {character.selectIndex === 1 && (
+
+          {character.selectIndex === 1 && gender === "girl" && (
             <CustomGirl
               hairIndex={hair.selectIndex}
               onClickHair={hair.onClickBtn}
@@ -92,8 +183,12 @@ const DrawingOption = () => {
               onClickClothes={clothes.onClickBtn}
             />
           )}
-
-          {/* <CustomBoy /> */}
+          {character.selectIndex === 1 && gender === "boy" && (
+            <CustomBoy
+              clothesIndex={clothes.selectIndex}
+              onClickClothes={clothes.onClickBtn}
+            />
+          )}
 
           <div className={style["select-btn"]}>
             <CheckBtn
@@ -102,8 +197,10 @@ const DrawingOption = () => {
                 color.selectIndex !== null &&
                 (character.selectIndex === 0 ||
                   (character.selectIndex === 1 &&
-                    hair.selectIndex !== null &&
-                    clothes.selectIndex !== null))
+                    ((gender === "girl" &&
+                      hair.selectIndex !== null &&
+                      clothes.selectIndex !== null) ||
+                      (gender === "boy" && clothes.selectIndex !== null))))
               }
               onClick={handleCheck}
             />
@@ -122,49 +219,47 @@ const CustomGirl = ({
 }) => (
   <div className={style["custom-container"]}>
     <div className={style.line}></div>
-
     <div className={style["hair-container"]}>
       {[
         { text: "짧은 머리", img: shorthair },
         { text: "단발", img: middlehair },
         { text: "긴머리", img: longhair },
-      ].map((item, index) => (
+      ].map((item, idx) => (
         <CustomHairBtn
-          key={index}
+          key={idx}
           text={item.text}
           img={item.img}
-          isSelected={hairIndex === index}
-          isDimmed={hairIndex !== null && hairIndex !== index}
-          onClick={() => onClickHair(index)}
+          isSelected={hairIndex === idx}
+          isDimmed={hairIndex !== null && hairIndex !== idx}
+          onClick={() => onClickHair(idx)}
         />
       ))}
     </div>
-
     <div className={style["clothes-container"]}>
-      {[Glook1, Glook2, Glook3].map((img, index) => (
+      {[look1, look2, look3].map((img, idx) => (
         <CustomClothesBtn
-          key={index}
+          key={idx}
           img={img}
-          isSelected={clothesIndex === index}
-          isDimmed={clothesIndex !== null && clothesIndex !== index}
-          onClick={() => onClickClothes(index)}
+          isSelected={clothesIndex === idx}
+          isDimmed={clothesIndex !== null && clothesIndex !== idx}
+          onClick={() => onClickClothes(idx)}
         />
       ))}
     </div>
   </div>
 );
 
-const CustomBoy = () => (
+const CustomBoy = ({ clothesIndex, onClickClothes }) => (
   <div className={style["custom-container"]}>
     <div className={style.line}></div>
     <div className={style["clothes-container"]}>
-      {[Glook1, Glook2, Glook3].map((img, index) => (
+      {[look4, look5].map((img, idx) => (
         <CustomClothesBtn
-          key={index}
+          key={idx}
           img={img}
-          isSelected={clothesIndex === index}
-          isDimmed={clothesIndex !== null && clothesIndex !== index}
-          onClick={() => onClickClothes(index)}
+          isSelected={clothesIndex === idx}
+          isDimmed={clothesIndex !== null && clothesIndex !== idx}
+          onClick={() => onClickClothes(idx)}
         />
       ))}
     </div>

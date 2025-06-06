@@ -1,25 +1,45 @@
+// src/pages/Diary/DiaryCreatePage/DiaryCreatePage.jsx
+import DiaryBtn from "../../../shared/ui/Button/DiaryBtn/DiaryBtn";
 import DiaryCard from "../../../shared/ui/DiaryCard/DiaryCard";
 import Header from "../../../widgets/Header/Header";
-import diary0413 from "../../MainPage/assets/0413.png";
-import beforediary from "../../MainPage/assets/beforediary.png";
 import style from "./diary-create-page.module.scss";
 
-const DiaryCreatePage = () => {
+const colorMap = {
+  빨간색: "#FCC8C8",
+  주황색: "#FFD5AB",
+  노랑색: "#FCF5AF",
+  연두색: "#E7F8C7",
+  하늘색: "#CDEFEF",
+  보라색: "#E8CCEC",
+  베이지색: "#F5E7CB",
+};
+
+const DiaryCreatePage = ({
+  date,
+  beforediary,
+  generatedImage,
+  generatedText,
+  color,
+}) => {
+  const bgColor = colorMap[color] || "#F5E7CB";
+  const displayDate = date.replace(/-/g, ".");
+
   return (
     <section className={style["diary-page"]}>
       <Header />
       <div className={style["diary-container"]}>
         <DiaryCard
-          date="2025.04.13"
+          date={displayDate}
           beforediary={beforediary}
-          image={diary0413}
+          image={generatedImage}
           style={{ border: "1px solid #ddd", backgroundColor: "#FFFFFF" }}
         />
+
         <DiaryCard
-          date="2025.04.13"
-          text="오늘은 학교에 갔다. 친구들이랑 체육 시간에 공놀이를 했다. 내가 제일 멀리 던졌다! 기분이 좋았다. 점심시간에는 김밥이 나왔다. 맛있어서 두 번 먹었다. 집에 와서 엄마랑 같이 강아지 산책을 했다. 강아지가 방방 뛰어서 웃겼다. 오늘은 즐거운 하루였다."
-          image={diary0413}
-          style={{ backgroundColor: "#F5E7CB" }}
+          date={displayDate}
+          text={generatedText}
+          image={generatedImage}
+          style={{ backgroundColor: bgColor }}
         />
       </div>
     </section>
