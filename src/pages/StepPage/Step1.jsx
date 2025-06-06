@@ -33,7 +33,11 @@ const Step1 = () => {
             onClick={() => navigate("/dictation", { state: { level: 1 } })}
           />
 
-          <StepCard imageSrc={antonym} title={"반의어 찾기"} />
+          <StepCard
+            imageSrc={antonym}
+            title={"반의어 찾기"}
+            onClick={() => navigate("/Antonym", { state: { level: 1 } })}
+          />
         </div>
       </section>
     </div>
