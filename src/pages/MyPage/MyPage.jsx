@@ -27,6 +27,11 @@ const MyPage = () => {
     fetchProfile();
   }, []);
 
+  const handleLogout = () => {
+    sessionStorage.removeItem("token");
+    navigate("/SignInPage");
+  };
+
   return (
     <div className={style["layout"]}>
       <Header />
@@ -52,6 +57,9 @@ const MyPage = () => {
         >
           <ProfileBtn text="프로필 수정" />
         </div>
+        <p className={style["logout"]} onClick={handleLogout}>
+          로그아웃
+        </p>
       </section>
     </div>
   );

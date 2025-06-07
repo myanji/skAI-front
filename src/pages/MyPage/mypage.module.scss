@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
 
-  height: 92vh;
-  justify-content: center;
+  margin-top: 20vh;
 }
 
 .mypage-container {
@@ -14,4 +13,15 @@
 
 .mypage-btn {
   margin-top: 5vh;
+}
+
+.logout {
+  margin-top: 20vh;
+  color: $gray;
+  font-family: "Pretendard";
+  font-size: 2vh;
+  font-weight: 400;
+  letter-spacing: -0.72px;
+
+  cursor: pointer;
 }
