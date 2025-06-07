@@ -1,4 +1,3 @@
-// src/pages/Diary/DrawingOption/DrawingOption.jsx
 import { useState, useEffect } from "react";
 import ColorBtn from "../../../features/diary/DrawingOptionBtn/ColorBtn/ColorBtn";
 import CustomHairBtn from "../../../features/diary/DrawingOptionBtn/CustomHair/CustomHairBtn";
@@ -27,7 +26,7 @@ const DrawingOption = ({ diaryImage }) => {
   const hair = useSelectIndex(); // 헤어스타일 (여자만)
   const clothes = useSelectIndex(); // 옷 선택
 
-  const [gender, setGender] = useState(null); // 서버에서 받아올 성별 ("girl" / "boy")
+  const [gender, setGender] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [resultData, setResultData] = useState(null);
   const [showFinish, setShowFinish] = useState(false);
@@ -54,13 +53,13 @@ const DrawingOption = ({ diaryImage }) => {
         "배경중심",
       ];
       const colorMapping = [
-        "빨간색",
-        "주황색",
-        "노랑색",
-        "연두색",
-        "하늘색",
-        "보라색",
-        "베이지색",
+        "화남",
+        "놀라움",
+        "기쁨",
+        "활기찬",
+        "슬픔",
+        "신비로움",
+        "보통",
       ];
       const selectedStyle = styleMapping[drawing.selectIndex];
       const selectedColor = colorMapping[color.selectIndex];
@@ -144,13 +143,13 @@ const DrawingOption = ({ diaryImage }) => {
           <p>선택한 색상 대로 그림이 만들어져요!</p>
           <div className={style["color-container"]}>
             {[
-              { text: "빨간색", color: "#FF5D5D" },
-              { text: "주황색", color: "#FFA24C" },
-              { text: "노란색", color: "#FFED4E" },
-              { text: "연두색", color: "#B4FF53" },
-              { text: "하늘색", color: "#5DDCFF" },
-              { text: "보라색", color: "#A05DFF" },
-              { text: "베이지색", color: "#F5E7CB" },
+              { text: "화남", color: "#FF5D5D" },
+              { text: "놀라움", color: "#FFA24C" },
+              { text: "기쁨", color: "#FFED4E" },
+              { text: "활기찬", color: "#B4FF53" },
+              { text: "슬픔", color: "#5DDCFF" },
+              { text: "신비로움", color: "#A05DFF" },
+              { text: "보통", color: "#F5E7CB" },
             ].map((item, idx) => (
               <ColorBtn
                 key={idx}

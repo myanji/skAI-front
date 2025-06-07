@@ -17,13 +17,13 @@ const CalendarPage = () => {
   const [detailData, setDetailData] = useState(null);
 
   const colorMap = {
-    빨간색: "#FF8484",
-    주황색: "#FFB770",
-    노랑색: "#FFF383",
-    연두색: "#B6F359",
-    하늘색: "#94EAFF",
-    보라색: "#DCB3FF",
-    베이지색: "#F5E7CB",
+    화남: "#FF8484",
+    놀라움: "#FFB770",
+    기쁨: "#FFF383",
+    활기찬: "#B6F359",
+    슬픔: "#94EAFF",
+    신비로움: "#DCB3FF",
+    보통: "#F5E7CB",
   };
 
   useEffect(() => {
@@ -110,7 +110,7 @@ const CalendarPage = () => {
 
   // 날짜 셀 클릭 시 호출
   const handleDateClick = async (dayObj) => {
-    if (!dayObj.current) return; // 이번 달이 아니면 무시
+    if (!dayObj.current) return;
 
     const mm = String(currentMonth + 1).padStart(2, "0");
     const dd = String(dayObj.date).padStart(2, "0");
@@ -120,14 +120,13 @@ const CalendarPage = () => {
       const res = await api.get("/api/diary/detail", {
         params: { date: fullDate },
       });
-      // 응답 예시: { date, fixedContent, imageUrl, capturedImageUrl, color }
       setDetailData(res.data);
     } catch (err) {
       console.error("일기 상세 불러오기 실패:", err);
     }
   };
 
-  // 뒤로 돌아가기: detailData를 null로 만들어 다시 달력 화면으로
+  // 뒤로 돌아가기
   const handleBackToCalendar = () => {
     setDetailData(null);
   };
@@ -136,17 +135,16 @@ const CalendarPage = () => {
   if (detailData) {
     return (
       <DiaryPage
-        date={detailData.date} // "YYYY-MM-DD"
-        generatedText={detailData.fixedContent} // 고정된(보정된) 텍스트
-        generatedImage={detailData.imageUrl} // 생성된 일기 이미지
-        beforediary={detailData.capturedImageUrl} // 업로드 전 원본 이미지
-        color={detailData.color} // "주황색" 등
-        onBack={handleBackToCalendar} // 뒤로 돌아가는 함수
+        date={detailData.date}
+        generatedText={detailData.fixedContent}
+        generatedImage={detailData.imageUrl}
+        beforediary={detailData.capturedImageUrl}
+        color={detailData.color}
+        onBack={handleBackToCalendar}
       />
     );
   }
 
-  // 기본: 달력 화면
   return (
     <section className={style.layout}>
       <Header />

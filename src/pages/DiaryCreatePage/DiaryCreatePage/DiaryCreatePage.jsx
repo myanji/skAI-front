@@ -5,19 +5,19 @@ import Header from "../../../widgets/Header/Header";
 import style from "./diary-create-page.module.scss";
 
 const colorMap = {
-  빨간색: "#FCC8C8",
-  주황색: "#FFD5AB",
-  노랑색: "#FCF5AF",
-  연두색: "#E7F8C7",
-  하늘색: "#CDEFEF",
-  보라색: "#E8CCEC",
-  베이지색: "#F5E7CB",
+  화남: "#FCC8C8",
+  놀라움: "#FFD5AB",
+  기쁨: "#FCF5AF",
+  활기찬: "#E7F8C7",
+  슬픔: "#CDEFEF",
+  신비로움: "#E8CCEC",
+  보통: "#F5E7CB",
 };
 
 const DiaryCreatePage = ({
   date,
   beforediary,
-  generatedImage,
+  image,
   generatedText,
   color,
 }) => {
@@ -31,14 +31,16 @@ const DiaryCreatePage = ({
         <DiaryCard
           date={displayDate}
           beforediary={beforediary}
-          image={generatedImage}
+          image={image}
+          color={color}
           style={{ border: "1px solid #ddd", backgroundColor: "#FFFFFF" }}
         />
 
         <DiaryCard
           date={displayDate}
           text={generatedText}
-          image={generatedImage}
+          image={image}
+          color={color}
           style={{ backgroundColor: bgColor }}
         />
       </div>
