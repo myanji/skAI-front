@@ -12,3 +12,101 @@
     margin-top: 6vh;
   }
 }
+
+.mike-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
+
+  width: 12vh;
+  height: 12vh;
+  border-radius: 40vh;
+  border: 0.5px solid $gray;
+  background-color: $white;
+
+  margin-bottom: 4vh;
+
+  img {
+    width: 8vh;
+  }
+}
+
+.canvas-div {
+  display: flex;
+  gap: 2vh;
+}
+
+.canvas {
+  margin-right: 10vh;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+.btn_send {
+  margin-top: 4vh;
+  width: 14vh;
+  height: 5.5vh;
+  border-radius: 50px;
+  background: $blue-500;
+  border: none;
+  font-family: "Jalnan";
+  color: #ffffff;
+  font-size: 2vh;
+}
+
+.ocr-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h4 {
+    margin-bottom: 1vh;
+    color: $black;
+    font-family: "Paperlogy";
+    font-size: 2.3vh;
+    font-weight: 800;
+  }
+
+  .ocr-result-text {
+    color: $black;
+    text-align: center;
+    font-family: "Paperlogy";
+    font-size: 2.5vh;
+    font-weight: 400;
+  }
+
+  .answer_div {
+    width: 70vh;
+    height: 1px;
+    background-color: $gray;
+    margin-top: 1vh;
+  }
+}
+
+.ocr-result-actions {
+  display: flex;
+  gap: 2vh;
+  margin-top: 5vh;
+
+  button {
+    width: 17vh;
+    height: 6vh;
+    border: none;
+
+    text-align: center;
+    font-family: "Jalnan";
+    font-size: 2vh;
+    border-radius: 50px;
+  }
+
+  .btn_rewrite {
+    color: #424242;
+    background-color: $blue-100;
+  }
+
+  .btn_confirm {
+    color: $white;
+    background-color: $blue-500;
+  }
+}
