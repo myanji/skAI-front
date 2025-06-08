@@ -147,7 +147,6 @@ const CalendarPage = () => {
 
   return (
     <section className={style.layout}>
-      <Header />
       <DiaryBtn />
 
       <div className={style["calendar-section"]}>

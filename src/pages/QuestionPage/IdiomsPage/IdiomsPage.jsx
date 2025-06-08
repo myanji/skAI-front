@@ -121,7 +121,6 @@ const IdiomsPage = () => {
 
   return (
     <div>
-      <Header />
       <section className={style["idioms-container"]}>
         <ProgressBar
           solvedCount={currentQuestion.level_id}

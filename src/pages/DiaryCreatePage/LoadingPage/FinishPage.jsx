@@ -18,7 +18,6 @@ const FinishPage = ({ resultData }) => {
 
   return (
     <div className={style.layout}>
-      <Header />
       <div className={style["finish-container"]}>
         <h3>그림이 완성되었어요!</h3>
         <img src={Finish} alt="완료 아이콘" />

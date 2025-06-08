@@ -13,30 +13,29 @@ const Step3 = () => {
 
   return (
     <div>
-      <Header />
       <section className={style["step-container"]}>
         <RoundedLabel text="3단계" />
         <div className={style["card-container"]}>
           <StepCard
             imageSrc={word}
             title={"단어 맞추기"}
-            onClick={() => navigate("/word", { state: { level: 3 } })}
+            onClick={() => navigate("word", { state: { level: 3 } })}
           />
           <StepCard
             imageSrc={sentence}
             title={"문장 순서 맞추기"}
-            onClick={() => navigate("/sentence", { state: { level: 3 } })}
+            onClick={() => navigate("sentence", { state: { level: 3 } })}
           />
           <StepCard
             imageSrc={dictation}
             title={"받아쓰기"}
-            onClick={() => navigate("/dictation", { state: { level: 3 } })}
+            onClick={() => navigate("dictation", { state: { level: 3 } })}
           />
 
           <StepCard
             imageSrc={idioms}
             title={"사자성어"}
-            onClick={() => navigate("/idioms", { state: { level: 3 } })}
+            onClick={() => navigate("idioms", { state: { level: 3 } })}
           />
         </div>
       </section>

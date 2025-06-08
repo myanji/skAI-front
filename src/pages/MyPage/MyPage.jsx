@@ -29,12 +29,11 @@ const MyPage = () => {
 
   const handleLogout = () => {
     sessionStorage.removeItem("token");
-    navigate("/SignInPage");
+    navigate("/signin");
   };
 
   return (
     <div className={style["layout"]}>
-      <Header />
       <section className={style["mypage-container"]}>
         {profileData && (
           <ProfileCard
@@ -53,7 +52,7 @@ const MyPage = () => {
 
         <div
           className={style["mypage-btn"]}
-          onClick={() => navigate("/profileeditpage")}
+          onClick={() => navigate("/profile-edit")}
         >
           <ProfileBtn text="프로필 수정" />
         </div>

@@ -115,7 +115,6 @@ const AntonymPage = () => {
 
   return (
     <section>
-      <Header />
       <div className={style["antonym-container"]}>
         <ProgressBar
           solvedCount={currentQuestion.level_id}

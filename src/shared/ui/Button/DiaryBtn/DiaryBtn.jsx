@@ -12,7 +12,7 @@ const DiaryBtn = ({ onClick }) => {
       <button
         className={style["diary-link"]}
         onClick={() => {
-          navigate("/DiaryCreate");
+          navigate("/Diary/create");
         }}
       >
         일기 쓰기

@@ -33,7 +33,6 @@ const SignInPage = () => {
 
   return (
     <div className={style["layout"]}>
-      <Header />
       <div className={style["sign-in-container"]}>
         <h1>로그인</h1>
         <form onSubmit={handleSubmit} className={style["input-container"]}>
@@ -65,7 +64,7 @@ const SignInPage = () => {
         </form>
 
         <div className={style["auth-nav"]}>
-          <a href="/SignUpPage">회원가입</a>
+          <a href="/signup">회원가입</a>
           <span>|</span>
           <a href="/FindPassword">비밀번호 찾기</a>
         </div>

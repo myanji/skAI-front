@@ -121,7 +121,6 @@ const DrawingOption = ({ diaryImage }) => {
 
   return (
     <div>
-      <Header />
       <div className={style.container}>
         <div className={style["option-container"]}>
           <h3>원하는 그림체를 선택해보세요</h3>

@@ -1,5 +1,3 @@
-// src/pages/Diary/DiaryCreatePage/DiaryCreatePage.jsx
-import DiaryBtn from "../../../shared/ui/Button/DiaryBtn/DiaryBtn";
 import DiaryCard from "../../../shared/ui/DiaryCard/DiaryCard";
 import Header from "../../../widgets/Header/Header";
 import style from "./diary-create-page.module.scss";
@@ -26,7 +24,6 @@ const DiaryCreatePage = ({
 
   return (
     <section className={style["diary-page"]}>
-      <Header />
       <div className={style["diary-container"]}>
         <DiaryCard
           date={displayDate}

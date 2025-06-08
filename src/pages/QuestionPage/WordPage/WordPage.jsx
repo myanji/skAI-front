@@ -109,7 +109,6 @@ const WordPage = () => {
 
   return (
     <div>
-      <Header />
       <section className={style["word-container"]}>
         <ProgressBar
           solvedCount={currentQuestion.level_id}

@@ -21,7 +21,7 @@ const SentencePage = () => {
 
   console.log(level);
 
-  // 문제 불러오기 헬퍼
+  // 문제 불러오기
   const loadQuestion = async () => {
     try {
       const res = await api.get("/api/sentences/shuffle/next", {
@@ -84,8 +84,6 @@ const SentencePage = () => {
 
   return (
     <div>
-      <Header />
-
       <section className={style["sentence-container"]}>
         <ProgressBar solvedCount={sentenceId} totalCount={100} />
 

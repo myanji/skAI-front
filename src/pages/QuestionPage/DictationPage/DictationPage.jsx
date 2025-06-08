@@ -1,5 +1,5 @@
 // src/pages/Dictation/DictationPage/DictationPage.jsx
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import html2canvas from "html2canvas";
 import style from "./dictation-page.module.scss";
 import ProgressBar from "../../../shared/ui/ProgressBar/ProgressBar";
@@ -14,38 +14,56 @@ import { useLocation } from "react-router-dom";
 
 const DictationPage = () => {
   const [tool, setTool] = useState("pencil");
-
   const location = useLocation();
   const { level = 1 } = location.state || {};
 
   // 사운드 재생 상태
   const [loadingSound, setLoadingSound] = useState(false);
   const [played, setPlayed] = useState(false);
-  // 현재 풀고 있는 문제의 ID
+
+  // 현재 문제의 ID, level_id
   const [dictationId, setDictationId] = useState(null);
+  const [levelId, setLevelID] = useState(null);
+
   // OCR 결과
   const [ocrResult, setOcrResult] = useState("");
   const [submitting, setSubmitting] = useState(false);
+
   // 모달 표시
   const [showModal, setShowModal] = useState(false);
-  // 캔버스 리셋
+
+  // 캔버스 리셋용 키 & ref
   const [canvasKey, setCanvasKey] = useState(0);
   const canvasContainerRef = useRef(null);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data: items } = await api.get("/api/dictation/unsolved", {
+          params: { level },
+        });
+        if (items.length > 0) {
+          const first = items[0];
+          setDictationId(first.id);
+          setLevelID(first.levelId);
+        }
+      } catch (err) {
+        console.error("첫 문제 정보 로드 실패", err);
+      }
+    })();
+  }, [level]);
+
   const handlePlaySound = async () => {
-    if (loadingSound) return;
+    if (loadingSound || !dictationId) return;
     setLoadingSound(true);
     try {
-      const { data: items } = await api.get("/api/dictation/unsolved", {
+      const res = await api.get("/api/dictation/unsolved", {
         params: { level },
       });
-      const item = items[110];
-      setDictationId(item.id);
+      const item = res.data.find((it) => it.id === dictationId);
+      if (!item?.soundsUrl) throw new Error("재생할 URL이 없습니다.");
 
-      const soundsUrl = item.soundsUrl;
-      if (!soundsUrl) throw new Error("재생할 URL이 없습니다.");
-
-      const audio = new Audio(soundsUrl);
+      const audio = new Audio(item.soundsUrl);
       audio.onended = () => setPlayed(false);
       await audio.play();
       setPlayed(true);
@@ -57,7 +75,6 @@ const DictationPage = () => {
     }
   };
 
-  // 작성한 캔버스를 OCR API로 보내기
   const handleSubmit = async () => {
     if (!dictationId) {
       alert("먼저 소리를 들어야 합니다.");
@@ -74,7 +91,6 @@ const DictationPage = () => {
         params: { dictationId },
         headers: { "Content-Type": "multipart/form-data" },
       });
-
       setOcrResult(res.data);
     } catch (err) {
       console.error("OCR 제출 실패", err);
@@ -84,13 +100,11 @@ const DictationPage = () => {
     }
   };
 
-  // 다시 쓰기: 결과 초기화 + 캔버스 리셋
   const handleRewrite = () => {
     setOcrResult("");
     setCanvasKey((k) => k + 1);
   };
 
-  // 확인 클릭 -> 맞았는지 비교 API 호출
   const handleCompare = async () => {
     try {
       const { data } = await api.post("/api/dictation/compare", {
@@ -111,17 +125,27 @@ const DictationPage = () => {
     setShowModal(false);
     setOcrResult("");
     setPlayed(false);
-    setDictationId(null);
     setCanvasKey((k) => k + 1);
+
+    api
+      .get("/api/dictation/unsolved", { params: { level } })
+      .then(({ data: items }) => {
+        if (items.length > 0) {
+          setDictationId(items[0].id);
+          setLevelID(items[0].level_id);
+        }
+      })
+      .catch((e) => console.error("다음 문제 로드 실패", e));
   };
 
   return (
     <div>
-      <Header />
       <section className={style["dictation-container"]}>
-        <ProgressBar solvedCount={20} totalCount={100} />
+        <ProgressBar solvedCount={levelId} totalCount={100} />
+
         <h3>아래 마이크를 눌러 소리를 듣고 맞춤법을 지켜서 따라 적어주세요!</h3>
 
+        {/* 사운드 버튼 */}
         <div className={style["mike-wrapper"]}>
           <button
             className={style["mike-box"]}
@@ -130,7 +154,7 @@ const DictationPage = () => {
           >
             <img
               src={played ? voiceIcon : micIcon}
-              alt={played ? "재생 완료 아이콘" : "마이크 아이콘"}
+              alt={played ? "재생 완료" : "마이크"}
               style={{ opacity: loadingSound ? 0.5 : 1 }}
             />
           </button>
@@ -138,6 +162,7 @@ const DictationPage = () => {
 
         {!ocrResult ? (
           <>
+            {/*  캔버스 쓰기 모드 */}
             <div className={style["canvas-div"]}>
               <CanvasToolbar tool={tool} onToolChange={setTool} />
               <div
@@ -148,7 +173,6 @@ const DictationPage = () => {
                 <Canvas mode={tool} width="80vh" height="20vh" />
               </div>
             </div>
-
             <button
               className={style["btn_send"]}
               onClick={handleSubmit}
@@ -158,19 +182,28 @@ const DictationPage = () => {
             </button>
           </>
         ) : (
-          <div className={style["ocr-result"]}>
-            <h4>인식 결과</h4>
-            <p className={style["ocr-result-text"]}>{ocrResult}</p>
-            <div className={style["answer_div"]}></div>
-            <div className={style["ocr-result-actions"]}>
-              <button className={style["btn_rewrite"]} onClick={handleRewrite}>
-                다시 쓰기
-              </button>
-              <button className={style["btn_confirm"]} onClick={handleCompare}>
-                확인
-              </button>
+          <>
+            {/*  OCR 결과 모드 */}
+            <div className={style["ocr-result"]}>
+              <h4>인식 결과</h4>
+              <p className={style["ocr-result-text"]}>{ocrResult}</p>
+              <div className={style["answer_div"]}></div>
+              <div className={style["ocr-result-actions"]}>
+                <button
+                  className={style["btn_rewrite"]}
+                  onClick={handleRewrite}
+                >
+                  다시 쓰기
+                </button>
+                <button
+                  className={style["btn_confirm"]}
+                  onClick={handleCompare}
+                >
+                  확인
+                </button>
+              </div>
             </div>
-          </div>
+          </>
         )}
 
         <Modal visible={showModal} title="정답이에요!" onConfirm={handleNext} />

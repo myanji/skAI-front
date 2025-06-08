@@ -51,7 +51,6 @@ const SelectImg = ({ resultData }) => {
 
   return (
     <section className={style.layout}>
-      <Header />
       <div className={style["select-img-container"]}>
         <h1>그림을 선택해주세요.</h1>
         <p>원하는 그림을 하나 선택한 뒤 확인 버튼을 눌러주세요.</p>

@@ -91,7 +91,6 @@ const SignUpPage = () => {
   }
   return (
     <div className={style["layout"]}>
-      <Header />
       <div className={style["sign-up-container"]}>
         <h1>회원가입</h1>
         <p className={style["explanation"]}>

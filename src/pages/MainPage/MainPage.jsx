@@ -24,7 +24,6 @@ const MainPage = () => {
 
   return (
     <main className={style["layout"]}>
-      <Header />
       <section className={style["first-section"]}>
         <div>
           <p className={style["subtitle-1"]}>

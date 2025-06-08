@@ -8,7 +8,6 @@ const SignUpFinishPage = () => {
 
   return (
     <div className={style["layout"]}>
-      <Header />
       <div className={style["sign-up-finish-container"]}>
         <img className={style["check-img"]} src={check} alt="Check 이미지" />
         <h1>회원가입 완료</h1>

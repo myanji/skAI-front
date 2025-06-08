@@ -5,7 +5,6 @@ import style from "./loading-page.module.scss";
 const LoadingPage = () => {
   return (
     <div className={style["layout"]}>
-      <Header />
       <div className={style["loading-container"]}>
         <h3>그림을 만들고 있어요...</h3>
         <p>만드는데 3분정도 소요되니 조금만 기다려주세요!</p>

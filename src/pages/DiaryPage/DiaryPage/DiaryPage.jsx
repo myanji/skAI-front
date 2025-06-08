@@ -32,7 +32,6 @@ const DiaryPage = ({
 
   return (
     <section className={style["page-container"]}>
-      <Header />
       <DiaryBtn onClick={onBack} />
       {/* <p className={style["message"]}>일기를 클릭해보세요!</p> */}
 

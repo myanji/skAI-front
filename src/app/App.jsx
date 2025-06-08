@@ -17,28 +17,57 @@ import CalendarPage from "../pages/DiaryPage/CalendarPage/CalendarPage";
 import DiaryCreatePage from "../pages/DiaryCreatePage/DiaryCreatePage/DiaryCreatePage";
 import DiaryPage from "../pages/DiaryPage/DiaryPage/DiaryPage";
 import AntonymPage from "../pages/QuestionPage/AntonymPage/AntonymPage";
+import Header from "../widgets/Header/Header";
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/Step1" element={<Step1 />} />
-        <Route path="/Step2" element={<Step2 />} />
-        <Route path="/Step3" element={<Step3 />} />
-        <Route path="/Word" element={<WordPage />} />
-        <Route path="/Sentence" element={<SentencePage />} />
-        <Route path="/Idioms" element={<IdiomsPage />} />
-        <Route path="/Dictation" element={<DictationPage />} />
-        <Route path="/Antonym" element={<AntonymPage />} />
-        <Route path="/MyPage" element={<MyPage />} />
-        <Route path="/ProfileEditPage" element={<ProfileEditPage />} />
-        <Route path="/DiaryCreate" element={<DiaryModeSelect />} />
-        <Route path="/SignUpPage" element={<SignUpPage />} />
-        <Route path="/SignInPage" element={<SignInPage />} />
-        <Route path="/Calendar" element={<CalendarPage />} />
-        <Route path="/DiaryCreatePage" element={<DiaryCreatePage />} />
-        <Route path="/Diary" element={<DiaryPage />} />
+
+        {/* 1단계 */}
+        <Route path="step1">
+          <Route index element={<Step1 />} />
+          <Route path="word" element={<WordPage />} />
+          <Route path="sentence" element={<SentencePage />} />
+          <Route path="idioms" element={<IdiomsPage />} />
+          <Route path="dictation" element={<DictationPage />} />
+          <Route path="antonym" element={<AntonymPage />} />
+        </Route>
+
+        {/* 2단계 (필요하다면) */}
+        <Route path="step2">
+          <Route index element={<Step2 />} />
+          <Route path="word" element={<WordPage />} />
+          <Route path="sentence" element={<SentencePage />} />
+          <Route path="idioms" element={<IdiomsPage />} />
+          <Route path="dictation" element={<DictationPage />} />
+          <Route path="antonym" element={<AntonymPage />} />
+        </Route>
+
+        {/* 3단계 */}
+        <Route path="step3">
+          <Route index element={<Step3 />} />
+          <Route path="word" element={<WordPage />} />
+          <Route path="sentence" element={<SentencePage />} />
+          <Route path="idioms" element={<IdiomsPage />} />
+          <Route path="dictation" element={<DictationPage />} />
+          <Route path="antonym" element={<AntonymPage />} />
+        </Route>
+
+        <Route path="mypage" element={<MyPage />} />
+        <Route path="profile-edit" element={<ProfileEditPage />} />
+        <Route path="signup" element={<SignUpPage />} />
+        <Route path="signin" element={<SignInPage />} />
+
+        {/* 일기 */}
+        <Route path="diary">
+          <Route path="create" element={<DiaryModeSelect />} />
+          <Route path="calendar" element={<CalendarPage />} />
+          <Route path="completion" element={<DiaryCreatePage />} />
+          <Route path="view" element={<DiaryPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

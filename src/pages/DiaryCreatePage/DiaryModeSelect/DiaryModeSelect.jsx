@@ -23,7 +23,6 @@ const DiaryModeSelect = () => {
 
   return (
     <div className={style["layout"]}>
-      <Header />
       <div className={style["container"]}>
         <h3 className={style.title}>어떤 방식으로 작성할지 선택해주세요!</h3>
         <div className={style["card-container"]}>

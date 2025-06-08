@@ -72,8 +72,6 @@ const ProfileEditPage = () => {
 
   return (
     <div className={style["layout"]}>
-      <Header />
-
       <div className={style["profile-edit-container"]}>
         <h2 className={style.title}>프로필 수정</h2>
         <section className={style.content}>

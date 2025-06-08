@@ -1,3 +1,4 @@
+// src/pages/StepPage/Step1.jsx
 import style from "./step.module.scss";
 import Header from "../../widgets/Header/Header";
 import StepCard from "../../shared/ui/StepCard/StepCard";
@@ -13,30 +14,28 @@ const Step1 = () => {
 
   return (
     <div>
-      <Header />
       <section className={style["step-container"]}>
         <RoundedLabel text="1단계" />
         <div className={style["card-container"]}>
           <StepCard
             imageSrc={word}
-            title={"단어 맞추기"}
-            onClick={() => navigate("/word", { state: { level: 1 } })}
+            title="단어 맞추기"
+            onClick={() => navigate("word", { state: { level: 1 } })}
           />
           <StepCard
             imageSrc={sentence}
-            title={"문장 순서 맞추기"}
-            onClick={() => navigate("/sentence", { state: { level: 1 } })}
+            title="문장 순서 맞추기"
+            onClick={() => navigate("sentence", { state: { level: 1 } })}
           />
           <StepCard
             imageSrc={dictation}
-            title={"받아쓰기"}
-            onClick={() => navigate("/dictation", { state: { level: 1 } })}
+            title="받아쓰기"
+            onClick={() => navigate("dictation", { state: { level: 1 } })}
           />
-
           <StepCard
             imageSrc={antonym}
-            title={"반의어 찾기"}
-            onClick={() => navigate("/Antonym", { state: { level: 1 } })}
+            title="반의어 찾기"
+            onClick={() => navigate("antonym", { state: { level: 1 } })}
           />
         </div>
       </section>

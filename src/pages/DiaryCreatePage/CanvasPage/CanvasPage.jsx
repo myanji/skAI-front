@@ -47,7 +47,6 @@ const CanvasPage = () => {
 
   return (
     <div className={style.layout}>
-      <Header />
       <div className={style["canvas-container"]}>
         <h3>일기를 작성해주세요!</h3>
         <p>
