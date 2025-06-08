@@ -10,7 +10,7 @@ const colorMap = {
   기쁨: "#FCF5AF",
   활기찬: "#E7F8C7",
   슬픔: "#CDEFEF",
-  신비로운: "#E8CCEC",
+  신비로움: "#E8CCEC",
   보통: "#F5E7CB",
 };
 

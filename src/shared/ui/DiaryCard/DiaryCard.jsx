@@ -13,13 +13,12 @@ const emotionMap = {
   기쁨: happy,
   활기찬: energetic,
   슬픔: sad,
-  신비로운: mysterious,
+  신비로움: mysterious,
   보통: neutral,
 };
 
 const DiaryCard = ({ date, image, text, beforediary, color, style = {} }) => {
   const emotion = emotionMap[color] || happy;
-  console.log(color);
   return (
     <article className={styles["diary-card"]} style={{ ...style }}>
       <h3>{date}</h3>

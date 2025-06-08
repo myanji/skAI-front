@@ -148,7 +148,7 @@ const DrawingOption = ({ diaryImage }) => {
               { text: "기쁨", color: "#FFED4E" },
               { text: "활기찬", color: "#B4FF53" },
               { text: "슬픔", color: "#5DDCFF" },
-              { text: "신비로움", color: "#A05DFF" },
+              { text: "신비로운", color: "#A05DFF" },
               { text: "보통", color: "#F5E7CB" },
             ].map((item, idx) => (
               <ColorBtn
