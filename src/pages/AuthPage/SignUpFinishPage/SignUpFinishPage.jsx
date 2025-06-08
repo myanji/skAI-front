@@ -17,7 +17,7 @@ const SignUpFinishPage = () => {
         <div className={style["btn-container"]}>
           <button onClick={() => navigate("/")}>메인으로</button>
           <button
-            onClick={() => navigate("/SignInPage")}
+            onClick={() => navigate("/signin")}
             className={style["login-btn"]}
           >
             로그인

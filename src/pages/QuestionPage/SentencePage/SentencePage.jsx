@@ -17,6 +17,7 @@ const SentencePage = () => {
   const [correctAnswer, setCorrectAnswer] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);
   const [sentenceId, setSentenceId] = useState(null);
+  const [levelId, setLevelId] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
   console.log(level);
@@ -30,7 +31,8 @@ const SentencePage = () => {
       const items = res.data;
       setCards(items);
       if (items.length > 0) {
-        setSentenceId(items[0].level_id);
+        setSentenceId(items[0].sentenceId);
+        setLevelId(items[0].level_id);
       }
       const sorted = [...items].sort((a, b) => a.order - b.order);
       setCorrectAnswer(sorted.map((it) => it.content).join(" "));
@@ -85,7 +87,7 @@ const SentencePage = () => {
   return (
     <div>
       <section className={style["sentence-container"]}>
-        <ProgressBar solvedCount={sentenceId} totalCount={100} />
+        <ProgressBar solvedCount={levelId} totalCount={100} />
 
         <h3>단어카드의 순서를 바꿔 올바른 문장을 만들어보세요!</h3>
         <p className={style["explanation"]}>
