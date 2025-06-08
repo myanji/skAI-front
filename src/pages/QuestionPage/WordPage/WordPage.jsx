@@ -1,8 +1,8 @@
 import style from "./word-page.module.scss";
 import ProgressBar from "../../../shared/ui/ProgressBar/ProgressBar";
 import Header from "../../../widgets/Header/Header";
-import WordQuestion from "../../../features/questions/word/WordQuestion/WordQuestion";
-import WordActions from "../../../features/questions/word/WordAction/WordActions";
+import WordQuestion from "../../../features/questions/Word/WordQuestion/WordQuestion";
+import WordActions from "../../../features/questions/Word/WordAction/WordActions";
 import { useEffect, useState } from "react";
 import api from "../../../shared/lib/api";
 import { useLocation } from "react-router-dom";
