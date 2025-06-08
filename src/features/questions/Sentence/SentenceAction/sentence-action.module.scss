@@ -13,3 +13,14 @@
   background-color: $gray;
   margin-top: 1vh;
 }
+
+.result {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0);
+}
