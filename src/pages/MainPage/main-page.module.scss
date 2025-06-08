@@ -85,14 +85,29 @@
   align-items: center;
 
   > * {
+    position: relative;
     margin-left: -15vh;
     transition: transform 0.3s ease, z-index 0.3s ease;
     transform: scale(0.75);
     z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      border-radius: inherit;
+      transition: background 0.3s ease;
+      pointer-events: none;
+    }
   }
 
   > *:first-child {
     margin-left: 0;
+  }
+
+  &:hover > *:not(:hover)::before {
+    background: rgba(0, 0, 0, 0.2);
   }
 
   > *:hover {
