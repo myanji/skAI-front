@@ -1,6 +1,6 @@
 // src/shared/ui/Button/CanvasToolbar/CanvasToolbar.jsx
-import Pencil from "./Pencil.png";
-import Eraser from "./Eraser.png";
+import Pencil from "./pencil.png";
+import Eraser from "./eraser.png";
 import style from "./canvas-toolbar.module.scss";
 
 const CanvasToolbar = ({ tool, onToolChange }) => {

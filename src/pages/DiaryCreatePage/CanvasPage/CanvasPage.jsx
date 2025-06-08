@@ -5,7 +5,6 @@ import CanvasToolbar from "../../../shared/ui/Button/CanvasToolbar/CanvasToolbar
 import CheckBtn from "../../../shared/ui/Button/CheckBtn/CheckBtn";
 import Canvas from "../../../shared/ui/Canvas/Canvas";
 import DrawingOption from "../DrawingOption/DrawingOption";
-import Header from "../../../widgets/Header/Header";
 import style from "./canvas-page.module.scss";
 
 const CanvasPage = () => {
