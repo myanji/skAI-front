@@ -40,7 +40,6 @@ const IdiomsPage = () => {
         if (Array.isArray(res.data) && res.data.length > 0) {
           setIdiomList(res.data);
           setCurrentIndex(0);
-          console.log(res.data);
         }
       } catch (err) {
         console.error("속담 불러오기 실패", err);

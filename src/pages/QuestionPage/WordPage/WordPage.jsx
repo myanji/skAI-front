@@ -40,7 +40,6 @@ const WordPage = () => {
           setIsCorrect(null);
           setShowHint(false);
           setSubmitted(false);
-          console.log(res.data);
         }
       } catch (err) {
         console.error("word 문제 불러오기 실패", err);
