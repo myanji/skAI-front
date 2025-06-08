@@ -1,7 +1,6 @@
 .layout {
   display: flex;
   flex-direction: column;
-
   height: 92vh;
   justify-content: center;
 }
@@ -11,6 +10,13 @@
   flex-direction: column;
   align-items: center;
 
+  .animatedText {
+    span {
+      opacity: 0;
+      display: inline-block;
+      animation: fadeIn 1s ease-in-out infinite alternate;
+    }
+  }
   h3 {
     color: $black;
     font-family: Freesentation;
@@ -29,5 +35,20 @@
 
   img {
     width: 40vh;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-0.2em);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-0.2em);
   }
 }
