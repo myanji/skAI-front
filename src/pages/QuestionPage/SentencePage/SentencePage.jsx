@@ -1,5 +1,6 @@
 // src/pages/Sentence/SentencePage/SentencePage.jsx
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import style from "./sentence-page.module.scss";
 import ProgressBar from "../../../shared/ui/ProgressBar/ProgressBar";
 import Header from "../../../widgets/Header/Header";
@@ -9,6 +10,7 @@ import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import api from "../../../shared/lib/api";
 
 const SentencePage = () => {
+  const location = useLocation();
   const { level = 1 } = location.state || {};
 
   const [cards, setCards] = useState([]);
@@ -17,6 +19,8 @@ const SentencePage = () => {
   const [sentenceId, setSentenceId] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
+  console.log(level);
+
   // 문제 불러오기 헬퍼
   const loadQuestion = async () => {
     try {
@@ -24,7 +28,6 @@ const SentencePage = () => {
         params: { level },
       });
       const items = res.data;
-      console.log(items);
       setCards(items);
       if (items.length > 0) {
         setSentenceId(items[0].level_id);
