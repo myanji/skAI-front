@@ -4,13 +4,13 @@
   justify-content: center;
   align-items: center;
   color: $white;
-  padding: 14vh 7vh;
-  gap: 8vh;
+  padding: 7vw;
+  gap: 5vw;
 
   div {
     display: flex;
     flex-direction: column;
-    gap: 2vh;
+    gap: 1vw;
   }
 
   p {
@@ -25,21 +25,21 @@
 
   h1 {
     font-family: "Gumi Romance";
-    font-size: 15vh;
+    font-size: 9vw;
   }
 
   img {
-    width: 30em;
+    width: 32vw;
   }
 }
 
 .subtitle-1 {
-  font-size: 5vh;
+  font-size: 2.8vw;
   letter-spacing: -1.2px;
 }
 
 .subtitle-2 {
-  font-size: 2.5vh;
+  font-size: 1.4vw;
 }
 
 .second-section {
@@ -49,18 +49,18 @@
   align-items: center;
   margin-top: 10vh;
   margin-bottom: 10vh;
-  gap: 5vh;
+  gap: 3vw;
 
   .second-diary {
     display: flex;
     justify-content: center;
-    gap: 5vh;
+    gap: 3vw;
   }
 
   .second-content {
     font-family: "Pretendard";
     font-weight: 300;
-    font-size: 2.3vh;
+    font-size: 1.2vw;
     text-align: center;
   }
 }
@@ -74,7 +74,7 @@
   .third-content {
     font-family: "Pretendard";
     font-weight: 300;
-    font-size: 2.3vh;
+    font-size: 1.3vw;
     text-align: center;
   }
 }
@@ -121,7 +121,7 @@
   flex-direction: column;
   align-items: center;
 
-  margin-top: 16vh;
+  margin-top: 9vw;
 }
 
 .card-stack {
@@ -129,7 +129,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5vh;
+  gap: 3vw;
 
-  margin-bottom: 18vh;
+  margin-bottom: 10vw;
 }

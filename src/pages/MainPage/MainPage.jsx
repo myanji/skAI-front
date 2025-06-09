@@ -1,5 +1,4 @@
 import Footer from "../../widgets/Footer/Footer";
-import Header from "../../widgets/Header/Header";
 import DiaryCard from "../../shared/ui/DiaryCard/DiaryCard";
 import mainImg from "./assets/mainImg.png";
 import style from "./main-page.module.scss";
