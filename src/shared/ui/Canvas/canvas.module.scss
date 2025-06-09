@@ -1,5 +1,3 @@
-/* src/components/canvas.module.scss */
-
 .canvas_wrap {
   position: relative;
   display: flex;
@@ -14,7 +12,7 @@
 }
 
 .canvas_wrap canvas {
-  border-radius: 8px;
+  border-radius: 1vw;
   background-color: white;
   cursor: crosshair;
   width: 100%;

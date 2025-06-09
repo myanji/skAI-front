@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2vh;
+  gap: 1vw;
 }
 
 .card {
-  width: 28vh;
+  width: 19vw;
   cursor: pointer;
   transition: transform 0.2s ease;
 
@@ -17,7 +17,7 @@
 
 .image-container {
   background-color: #a8ddfd;
-  height: 27vh;
+  height: 17vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,24 +34,15 @@
   font-family: "Jalnan";
   color: $black;
 
-  padding: 1.5vh;
+  padding: 1vw;
   text-align: center;
   border: 2px solid #a4d5ff;
-  border-radius: 0px 0px 20px 20px;
+  border-radius: 0px 0px 2vw 2vw;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
   h3 {
-    margin: 0.5rem 0;
-    font-size: 1.25rem;
-    color: #333;
+    margin: 0.8vw 0;
+    font-size: 1.5vw;
+    color: $black;
   }
-}
-
-.subtitle {
-  color: $black;
-  width: 20vh;
-  text-align: center;
-  font-family: "Pretendard";
-  font-size: 2vh;
-  font-weight: 300;
 }
