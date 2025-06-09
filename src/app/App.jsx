@@ -66,7 +66,7 @@ function App() {
           <Route path="create" element={<DiaryModeSelect />} />
           <Route path="calendar" element={<CalendarPage />} />
           <Route path="completion" element={<DiaryCreatePage />} />
-          <Route path="view" element={<DiaryPage />} />
+          <Route path=":date" element={<DiaryPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

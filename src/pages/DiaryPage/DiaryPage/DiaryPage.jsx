@@ -1,8 +1,9 @@
-import { useState } from "react";
-import Header from "../../../widgets/Header/Header";
-import DiaryBtn from "../../../shared/ui/Button/DiaryBtn/DiaryBtn";
+// src/pages/Diary/DiaryPage/DiaryPage.jsx
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import DiaryCard from "../../../shared/ui/DiaryCard/DiaryCard";
 import style from "./diary-page.module.scss";
+import api from "../../../shared/lib/api";
 
 const colorMap = {
   화남: "#FCC8C8",
@@ -14,32 +15,41 @@ const colorMap = {
   보통: "#F5E7CB",
 };
 
-const DiaryPage = ({
-  date,
-  generatedText,
-  generatedImage,
-  beforediary,
-  color,
-  onBack,
-}) => {
+const DiaryPage = () => {
+  const { date } = useParams();
+  const navigate = useNavigate();
+
+  const [data, setData] = useState(null);
   const [flipped, setFlipped] = useState(false);
+
+  useEffect(() => {
+    api
+      .get("/api/diary/detail", { params: { date } })
+      .then((res) => setData(res.data))
+      .catch((err) => console.error("일기 상세 불러오기 실패:", err));
+  }, [date]);
+
+  if (!data) {
+    return <p className={style["loading"]}>일기를 불러오는 중입니다…</p>;
+  }
+
+  const {
+    fixedContent: generatedText,
+    imageUrl: generatedImage,
+    capturedImageUrl: beforediary,
+    color,
+  } = data;
+
   const displayDate = date.replace(/-/g, ".");
   const bgColor = colorMap[color] || "#F5E7CB";
 
-  const handleCardClick = () => {
-    setFlipped((prev) => !prev);
-  };
-
   return (
     <section className={style["page-container"]}>
-      <DiaryBtn onClick={onBack} />
-      {/* <p className={style["message"]}>일기를 클릭해보세요!</p> */}
+      <button className={style["back-button"]} onClick={() => navigate(-1)}>
+        ← 뒤로가기
+      </button>
 
-      <div
-        className={style["flip-card"]}
-        onClick={handleCardClick}
-        style={{ cursor: "pointer" }}
-      >
+      <div className={style["flip-card"]} onClick={() => setFlipped((f) => !f)}>
         <div
           className={`${style["flip-card-inner"]} ${
             flipped ? style["flipped"] : ""
@@ -61,7 +71,10 @@ const DiaryPage = ({
               beforediary={beforediary}
               image={generatedImage}
               color={color}
-              style={{ border: "1px solid #ddd", backgroundColor: "#FFFFFF" }}
+              style={{
+                border: "1px solid #ddd",
+                backgroundColor: "#FFFFFF",
+              }}
             />
           </div>
         </div>

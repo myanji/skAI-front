@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import ColorBtn from "../../../features/diary/DrawingOptionBtn/ColorBtn/ColorBtn";
 import CustomHairBtn from "../../../features/diary/DrawingOptionBtn/CustomHair/CustomHairBtn";
 import OptionBtn from "../../../features/diary/DrawingOptionBtn/OptionBtn/OptionBtn";
-import Header from "../../../widgets/Header/Header";
 import style from "./drawing-option.module.scss";
 import shorthair from "../assets/shorthair.png";
 import middlehair from "../assets/middlehair.png";
@@ -20,6 +20,11 @@ import FinishPage from "../LoadingPage/FinishPage";
 import api from "../../../shared/lib/api";
 
 const DrawingOption = ({ diaryImage }) => {
+  // 날짜 받아오기
+  const {
+    state: { date },
+  } = useLocation();
+
   const drawing = useSelectIndex(); // 그림체 선택
   const color = useSelectIndex(); // 색상 선택
   const character = useSelectIndex(); // 캐릭터 꾸미기 여부
@@ -86,6 +91,7 @@ const DrawingOption = ({ diaryImage }) => {
         useCustom: useCustom.toString(),
         hairstyle: hairstyleParam,
         outfit: outfitParam,
+        date: date,
       }).toString();
 
       const formData = new FormData();

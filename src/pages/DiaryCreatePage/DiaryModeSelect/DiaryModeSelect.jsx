@@ -2,7 +2,6 @@ import style from "./diary-mode-select.module.scss";
 import Write from "../assets/write.png";
 import Typing from "../assets/typing.png";
 import CreateCard from "../../../features/diary/CreateCard/CreateCard";
-import Header from "../../../widgets/Header/Header";
 import CheckBtn from "../../../shared/ui/Button/CheckBtn/CheckBtn";
 import useSelectIndex from "../../../shared/hooks/useSelectIndex";
 import TypingPage from "../TypingPage/TypingPage";

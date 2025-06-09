@@ -57,7 +57,7 @@ const Header = () => {
             3단계
           </li>
           <li
-            className={getMenuClass("/Diary/Calendar")}
+            className={getMenuClass("/Diary")}
             onClick={() => navigate("/Diary/Calendar")}
           >
             일기
