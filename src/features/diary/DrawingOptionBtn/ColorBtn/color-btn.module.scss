@@ -1,16 +1,16 @@
 .color-btn {
   display: flex;
-  width: 14.5vh;
-  height: 5.8vh;
+  width: 8.2vw;
+  height: 3.2vw;
   justify-content: center;
   align-items: center;
-  gap: 1.5vh;
+  gap: 1.2vw;
   border-radius: 50px;
   border: none;
 
   font-family: "Freesentation";
   color: $black;
-  font-size: 1.9vh;
+  font-size: 1.1vw;
   font-weight: 400;
 
   border: 0.5px solid $black;
@@ -20,8 +20,8 @@
 }
 
 .color-dot {
-  width: 3vh;
-  height: 3vh;
+  width: 1.8vw;
+  height: 1.8vw;
   flex-shrink: 0;
   border-radius: 50%;
   background-color: #ff5d5d;

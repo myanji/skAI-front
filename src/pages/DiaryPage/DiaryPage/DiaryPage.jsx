@@ -45,10 +45,6 @@ const DiaryPage = () => {
 
   return (
     <section className={style["page-container"]}>
-      <button className={style["back-button"]} onClick={() => navigate(-1)}>
-        ← 뒤로가기
-      </button>
-
       <div className={style["flip-card"]} onClick={() => setFlipped((f) => !f)}>
         <div
           className={`${style["flip-card-inner"]} ${

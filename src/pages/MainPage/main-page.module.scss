@@ -47,8 +47,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+  margin-top: 8vw;
+  margin-bottom: 8vw;
   gap: 3vw;
 
   .second-diary {
@@ -86,7 +86,7 @@
 
   > * {
     position: relative;
-    margin-left: -15vh;
+    margin-left: -10vw;
     transition: transform 0.3s ease, z-index 0.3s ease;
     transform: scale(0.75);
     z-index: 1;

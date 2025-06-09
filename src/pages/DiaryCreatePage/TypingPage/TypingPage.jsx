@@ -2,13 +2,11 @@ import { useRef, useState } from "react";
 import html2canvas from "html2canvas";
 import DrawingOption from "../DrawingOption/DrawingOption";
 import CheckBtn from "../../../shared/ui/Button/CheckBtn/CheckBtn";
-import Header from "../../../widgets/Header/Header";
 import style from "./typing-page.module.scss";
 
 const TypingPage = () => {
   const [diaryText, setDiaryText] = useState("");
   const [imageBlob, setImageBlob] = useState(null);
-  const [imageURL, setImageURL] = useState(null);
   const [confirmed, setConfirmed] = useState(false);
 
   const previewRef = useRef(null);
@@ -25,7 +23,6 @@ const TypingPage = () => {
       const file = new File([blob], "beforediary.jpg", { type: "image/jpeg" });
 
       setImageBlob(file);
-      setImageURL(URL.createObjectURL(file));
       setConfirmed("next");
     }
   };

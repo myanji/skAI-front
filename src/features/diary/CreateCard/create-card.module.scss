@@ -1,9 +1,9 @@
 .card-container {
   display: flex;
   flex-direction: column;
-  width: 30vh;
-  padding: 4.5vh 0 1.5vh 0;
-  border-radius: 20px;
+  width: 17vw;
+  padding: 2.6vw 0 1vw 0;
+  border-radius: 1vw;
   border: 1px solid #484848;
   background: #fff;
 
@@ -12,7 +12,7 @@
 
 .card-img {
   width: 92%;
-  margin-left: 2.4vh;
+  margin-left: 1.35vw;
 }
 
 .card-text {
@@ -21,12 +21,12 @@
   margin-bottom: 0.8vh;
 
   font-family: "Jalnan";
-  font-size: 2.6vh;
+  font-size: 1.4vw;
   color: $black;
 }
 
 .selected {
-  border: 3px solid $blue-500;
+  border: 0.2vw solid $blue-500;
 }
 
 .dimmed {
