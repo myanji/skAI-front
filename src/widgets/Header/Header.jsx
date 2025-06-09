@@ -14,7 +14,6 @@ const Header = () => {
 
   useEffect(() => {
     const token = sessionStorage.getItem("token");
-
     if (token) {
       setIsLoggedIn(true);
       api
@@ -23,9 +22,11 @@ const Header = () => {
         .catch(() => setProfileImage(defaultImg))
         .finally(() => setIsLoaded(true));
     } else {
+      setIsLoggedIn(false);
+      setProfileImage(defaultImg);
       setIsLoaded(true);
     }
-  }, []);
+  }, [location.pathname]);
 
   // 현재 경로에 따라 active 처리
   const getMenuClass = (path) =>
