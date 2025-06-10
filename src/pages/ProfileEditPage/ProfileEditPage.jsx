@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
 import style from "./profile-edit-Page.module.scss";
-import Header from "../../widgets/Header/Header";
 import ProfileCard from "../../features/profile/ProfileCard/ProfileCard";
 import ProfileBtn from "../../shared/ui/Button/ProfileBtn/ProfileBtn";
 import api from "../../shared/lib/api";
 import useCalculateGrade from "../../shared/hooks/useCalculateGrade";
-
-import bear from "./assets/bear.png";
-import bunny from "./assets/rabbit.png";
-import cat from "./assets/cat.png";
-import robot from "./assets/robot.png";
 import { useNavigate } from "react-router-dom";
 
-const avatarOptions = [bear, bunny, cat, robot];
+const avatarOptions = [
+  "/avatars/bear.png",
+  "/avatars/bunny.png",
+  "/avatars/cat.png",
+  "/avatars/robot.png",
+];
 
 const ProfileEditPage = () => {
   const calculateGrade = useCalculateGrade();
@@ -23,7 +22,7 @@ const ProfileEditPage = () => {
     birthday: "",
     nickname: "닉네임",
     gender: "",
-    image: bear,
+    image: "/avatars/bear.png",
   });
 
   useEffect(() => {
@@ -36,7 +35,7 @@ const ProfileEditPage = () => {
           birthday: data.birthday || "",
           nickname: data.nickname || "",
           gender: data.gender || "",
-          image: data.image || bear,
+          image: data.image || "/avatars/bear.png",
         });
       } catch (err) {
         console.error("프로필 정보 불러오기 실패:", err);

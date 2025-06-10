@@ -1,7 +1,5 @@
-// src/widgets/Header/Header.jsx
 import { useState, useEffect } from "react";
 import style from "./header.module.scss";
-import defaultImg from "../../pages/ProfileEditPage/assets/bear.png";
 import { useNavigate, useLocation } from "react-router-dom";
 import api from "../../shared/lib/api";
 
@@ -11,6 +9,7 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [profileImage, setProfileImage] = useState(defaultImg);
   const [isLoaded, setIsLoaded] = useState(false);
+  const defaultImg = "/avatars/bear.png";
 
   useEffect(() => {
     const token = sessionStorage.getItem("token");

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../shared/lib/api";
 import ProfileCard from "../../features/profile/ProfileCard/ProfileCard";
-import profileImg from "../ProfileEditPage/assets/bear.png";
 import style from "./mypage.module.scss";
 import ProfileBtn from "../../shared/ui/Button/ProfileBtn/ProfileBtn";
 import useCalculateGrade from "../../shared/hooks/useCalculateGrade";
@@ -10,6 +9,7 @@ import useCalculateGrade from "../../shared/hooks/useCalculateGrade";
 const MyPage = () => {
   const calculateGrade = useCalculateGrade();
   const navigate = useNavigate();
+  const defaultImg = "/avatars/bear.png";
 
   const [profileData, setProfileData] = useState(null);
 
@@ -37,7 +37,7 @@ const MyPage = () => {
         {profileData && (
           <ProfileCard
             frontData={{
-              image: profileData.image || profileImg,
+              image: profileData.image || defaultImg,
               name: profileData.nickname,
               grade: calculateGrade(profileData.birthday),
             }}
