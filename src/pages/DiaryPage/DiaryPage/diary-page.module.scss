@@ -4,19 +4,21 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
+
+  margin-top: 3vh;
 }
 
 .flip-card {
   position: relative;
-  width: 35vh;
-  perspective: 800px;
+  width: 20vw;
+  perspective: 900px;
   cursor: url("src/shared/assets/cursor.png"), pointer !important;
 }
 
 .flip-card-inner {
   position: relative;
-  width: 35vh;
   text-align: center;
+  width: 20vw;
   transition: transform 0.8s;
   transform-style: preserve-3d;
   z-index: 1;

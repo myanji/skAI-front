@@ -139,7 +139,7 @@ const DictationPage = () => {
   };
 
   return (
-    <div>
+    <div className={style["layout"]}>
       <section className={style["dictation-container"]}>
         <ProgressBar solvedCount={levelId} totalCount={100} />
 
