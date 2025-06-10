@@ -1,6 +1,6 @@
 import Footer from "../../widgets/Footer/Footer";
 import DiaryCard from "../../shared/ui/DiaryCard/DiaryCard";
-import mainImg from "./assets/mainImg.png";
+import mainImg from "./assets/mainImg.svg";
 import style from "./main-page.module.scss";
 
 import diary0411 from "./assets/0411.png";
