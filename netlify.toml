@@ -1,0 +1,8 @@
+[build]
+  publish = "build"       
+  command = "npm run build"
+
+[[redirects]]
+  from = "/*"             # 모든 요청
+  to = "/index.html"      # index.html 로 포워딩
+  status = 200            # 200 응답으로 처리

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../shared/lib/api";
 import ProfileCard from "../../features/profile/ProfileCard/ProfileCard";
-import Header from "../../widgets/Header/Header";
 import profileImg from "../ProfileEditPage/assets/bear.png";
 import style from "./mypage.module.scss";
 import ProfileBtn from "../../shared/ui/Button/ProfileBtn/ProfileBtn";
