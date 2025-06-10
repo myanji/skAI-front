@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const avatarOptions = [
   "/avatars/bear.png",
-  "/avatars/bunny.png",
+  "/avatars/rabbit.png",
   "/avatars/cat.png",
   "/avatars/robot.png",
 ];
