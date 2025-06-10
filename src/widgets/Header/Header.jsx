@@ -7,9 +7,9 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const defaultImg = "/avatars/bear.png";
   const [profileImage, setProfileImage] = useState(defaultImg);
   const [isLoaded, setIsLoaded] = useState(false);
-  const defaultImg = "/avatars/bear.png";
 
   useEffect(() => {
     const token = sessionStorage.getItem("token");
