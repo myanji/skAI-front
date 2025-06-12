@@ -131,8 +131,9 @@ const DictationPage = () => {
       .get("/api/dictation/unsolved", { params: { level } })
       .then(({ data: items }) => {
         if (items.length > 0) {
-          setDictationId(items[0].id);
-          setLevelID(items[0].level_id);
+          const first = items[0];
+          setDictationId(first.id);
+          setLevelID(first.levelId);
         }
       })
       .catch((e) => console.error("다음 문제 로드 실패", e));
